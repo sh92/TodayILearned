@@ -1,6 +1,9 @@
 #Database
 
-* Record, Field, Entity
+* Database Component
+ * Row(=Record) : Entity
+ * Column(=Field) : Attribute
+ * Relationship
 
 * ACID?
 

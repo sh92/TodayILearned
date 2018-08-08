@@ -1,5 +1,17 @@
 # Data Structure & Algorithms
 
+### Basic Structure
+
+* Array List vs Linked List
+
+* Stack
+
+* Queue
+
+* Heap
+
+* Priority Queue
+
 ### Sort
 
 * bubbleSort
@@ -10,13 +22,25 @@
 
 * mergeSort
 
+* Heap Sort
+ * Max Heap - > Increasing Order
+ * Min Heap - > Decreasing Order
+
+
 ### Tree
 
-* binary Tree
+* Binary Tree
  * Fully connected binary Tree
  * Complete binary Tree
 
+## Minimum Spanning Tree
+* Kruskal's Algorithm
+* Prim's Algorithm
+
 ### Graph
+
+* BFS
+* DFS
 
 * Strong Connected Component
 
@@ -34,3 +58,7 @@
 ### Hash Function
 * Hash Map
 * Hash Set
+
+* 알면 좋은 사이트
+[Algorithms visualizer](http://algo-visualizer.jasonpark.me/#path=backtracking/knight's_tour/basic)
+[Data structure visualization](https://www.cs.usfca.edu/~galles/visualization/Algorithms.html)
