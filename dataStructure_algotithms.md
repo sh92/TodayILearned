@@ -33,7 +33,7 @@
  * Fully connected binary Tree
  * Complete binary Tree
 
-## Minimum Spanning Tree
+### Minimum Spanning Tree
 * Kruskal's Algorithm
 * Prim's Algorithm
 
@@ -60,5 +60,5 @@
 * Hash Set
 
 * 알면 좋은 사이트
-[Algorithms visualizer](http://algo-visualizer.jasonpark.me/#path=backtracking/knight's_tour/basic)
+[Algorithms visualizer](http://algo-visualizer.jasonpark.me/#path=backtracking/knight's_tour/basic)  
 [Data structure visualization](https://www.cs.usfca.edu/~galles/visualization/Algorithms.html)

@@ -12,3 +12,8 @@
 
 * rdd?
 
+## Crawling and Scrapping
+
+* Crawling vs Scrapping
+
+* Library

@@ -11,6 +11,7 @@ application의 실행을 컨트롤하는 소프트 웨어 harware와 application
 프로세스의 context를 저장하고 프로세스 스케쥴링을 위한 데이터 구조 단위
 
 * Context Switch?
+[Link](http://jeong-pro.tistory.com/93)
 
 when? 
 
@@ -59,6 +60,7 @@ UniProgramming은 하나의 프로그램을 사용하고MultiProgramming은 여�
 
 * concurrent vs parallel programming
 [Link](https://www.slideshare.net/TausunAkhtary/concurrent-parallel-programming)
+[Link2](https://takuti.me/note/parallel-vs-concurrent/)
 
 ## Concurrency(Deadlock and Starvation)
 
