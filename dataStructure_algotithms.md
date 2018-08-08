@@ -23,15 +23,15 @@
 * mergeSort
 
 * Heap Sort
- * Max Heap - > Increasing Order
- * Min Heap - > Decreasing Order
+  * Max Heap - > Increasing Order
+  * Min Heap - > Decreasing Order
 
 
 ### Tree
 
 * Binary Tree
- * Fully connected binary Tree
- * Complete binary Tree
+  * Fully connected binary Tree
+  * Complete binary Tree
 
 ### Minimum Spanning Tree
 * Kruskal's Algorithm
@@ -59,6 +59,6 @@
 * Hash Map
 * Hash Set
 
-* 알면 좋은 사이트
+* 알면 좋은 사이트  
 [Algorithms visualizer](http://algo-visualizer.jasonpark.me/#path=backtracking/knight's_tour/basic)  
 [Data structure visualization](https://www.cs.usfca.edu/~galles/visualization/Algorithms.html)

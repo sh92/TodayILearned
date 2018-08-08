@@ -5,9 +5,10 @@
  * Column(=Field) : Attribute
  * Relationship
 
-* ACID?
 
 * Transaction?
+ * ACID?
+ * [Link](http://mommoo.tistory.com/62)
 
 * B-Tree vs B+Tree
 
