@@ -33,6 +33,7 @@ UniProgramming은 하나의 프로그램을 사용하고MultiProgramming은 여�
 * The function of OS
 
 * IPC?
+프로세스간 통신방법
 
 * Shared Memory vs Message Passing
 
@@ -75,11 +76,16 @@ UniProgramming은 하나의 프로그램을 사용하고MultiProgramming은 여�
 * Concurrency?
 
 * Key Term
-  * Race condition이란 여러 프로세스들이나 멀티 쓰레드가 공유 데이터를 읽거나 쓸때 상대적인 타이밍에 따라 결과가 의존 될때, 즉 누가 먼저 쓰느냐 
-  * Mutual Exclusion이란	한 프로세스가 공유된 자원에 접근할 때 다른 프로세스가 접근하지 못하도록 하는 요구  
-  * Critical section : 공유자원에 접근하기 위해 요구하는 프로세스내의 코드 그리고 다른 프로세스가 접근하는 동안 해당 부분의 코드를 접근 할 수 없다. 그 코드 부분을 크리티컬 섹션이라 부른다 
-  * Starvation : 스케쥴러에의해 간과된 실행가능한 프로세스 그것이 진행되지 않으면 절대 선택되지 않을 것이다.
-  * Deadlock : 한개 또는 여러 프로세스들은 진행할 수 없다. 왜냐하면 각각은 한개가 어떤것을 하도록 기다리기 때문이다.
+  * Race condition
+    * 여러 프로세스들이나 멀티 쓰레드가 공유 데이터를 읽거나 쓸때 상대적인 타이밍에 따라 결과가 의존 될때, 즉 누가 먼저 쓰느냐 
+  * Mutual Exclusion
+    * 한 프로세스가 공유된 자원에 접근할 때 다른 프로세스가 접근하지 못하도록 하는 요구  
+  * Critical section 
+    * 공유자원에 접근하기 위해 요구하는 프로세스내의 코드 그리고 다른 프로세스가 접근하는 동안 해당 부분의 코드를 접근 할 수 없다. 그 코드 부분을 크리티컬 섹션이라 부른다 
+  * Starvation 
+    * 스케쥴러에의해 간과된 실행가능한 프로세스 그것이 진행되지 않으면 절대 선택되지 않을 것이다.
+  * Deadlock 
+    * 한개 또는 여러 프로세스들은 진행할 수 없다. 왜냐하면 각각은 한개가 어떤것을 하도록 기다리기 때문이다.
 
 * concurrent vs parallel programming
 [More](https://www.slideshare.net/TausunAkhtary/concurrent-parallel-programming)
@@ -152,6 +158,40 @@ Semaphore는 공유된 자원의 데이터를 여러 프로스세가가 접근�
 
 
 ## Concurrency(Deadlock and Starvation)
+
+* Deadlock 4 conditions
+  * Mutual Exclusion
+  * Hold and wait
+  * No preemtion
+  * Circular Wait
+
+* Deadlock Avoidence
+  * Banker's Algorithms
+    * 요구된 최대한의 요구사항이 미리 언급 된다. 고정된 숫자의 리소스가 할당되어야한다. 현재 할당 상태에 대한 정보를 가진다
+	* 단점: 일반적으로 얼마나 쓸지 알 수없다. 시간적 비용 큼
+
+* After Deadlock Detection
+  * Abort all deadlocked processes
+
+* Dining Philosopher Problem Solution
+People : 5 Fork : 4
+```{Solve}
+semaphore fork[5] ={1}; 
+int i;
+semaphore room = {4};
+void philosophre(int i ) {
+  whie(true){ 
+     think; 
+     wait(room);  
+	 wait(fork[i]);  
+	 wait(fork[(i+1) mod 4]);  
+	 eat();
+	 signal(fork[(i+1) mod 5 ]);  
+	 signal(fork[i]); 
+	 signal(room); 
+  } 
+}
+```
 
 ## Memory Mangaement
 
