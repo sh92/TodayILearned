@@ -1,6 +1,6 @@
 # Network
 
-* OSI7 Layer?
+* [OSI7 Layer](http://yellowh.tistory.com/19)
 
 ### TCP vs UDP
 * UDP
@@ -13,7 +13,17 @@
   * IGMP, BGP/OSPF
 
 * The Process of data transmission in TCP/IP
-  * Data More and MTU? [More](http://ddooooki.tistory.com/15)
+  *  [More](http://ddooooki.tistory.com/15)
+  * MTU
+
+* [Network Performence Measure](https://en.wikipedia.org/wiki/Network_performance)
+  * Bandwidth
+  * Throughput
+  * Latency
+  * Jitter
+  * Error rate
+
+* [Latency vs Delay vs Jitter](http://sensechef.com/1156)
 
 * RTT? Throughput? Latency? BandWidth?
   * [Measure TCP Max Throughput](http://nenunena.tistory.com/149)
@@ -45,8 +55,6 @@
   * HTTP vs HTTPS  
     * SSL/TLS
 
-* Thrououtput vs Latency?
-
 * Routing?
 
 * POST vs GET method
@@ -54,3 +62,6 @@
 * CSMA/CD vs CSMA/CA
 
 * RCP, GRPC
+
+* Good Site
+  * [해당 사이트 Lecture Note 참고](http://www.ritsumei.ac.jp/~piumarta/networks/)
