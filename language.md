@@ -6,7 +6,7 @@
 
 * [GC](http://asfirstalways.tistory.com/159)
 
-* [Reflection](http://gyrfalcon.tistory.com/entry/Java-Reflection)
+* [Reflection](http://gyrfalcon.tistory.com/entry/Java-Reflection)  
 객체를 통해 클래스의 정보를 분석해 내는 프로그램 기법
 
 * [Override vs Overload](http://hyeonstorage.tistory.com/185)

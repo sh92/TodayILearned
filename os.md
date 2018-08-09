@@ -195,3 +195,7 @@ void philosophre(int i ) {
 
 ## Memory Mangaement
 
+## ETC
+
+* [CPU캐시메모리의 역할](http://it.donga.com/215/)
+
