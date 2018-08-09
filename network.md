@@ -49,7 +49,7 @@
   * [More](http://ddooooki.tistory.com/17)
 
 ### HTTP
-* HTTP1.0 vs 1.1 vs 2.0
+* [HTTP1.0 vs 1.1 vs 2.0](http://americanopeople.tistory.com/115)
   * HTTP 2.0
     * SPDY  
   * HTTP vs HTTPS  

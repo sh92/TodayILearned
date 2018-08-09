@@ -15,6 +15,14 @@
 
 * [GIL](https://realpython.com/python-gil/)
 
+* [@staticmethod vs @classmethod](https://code.i-harness.com/ko/q/213a1)
+
+* [__str__ vs __repr__](https://code.i-harness.com/ko/q/15ec1f)
+
+* [yield](https://code.i-harness.com/ko/q/38957)
+
+* [MetaClass](https://code.i-harness.com/ko/q/186a3)
+
 * Built-in function
 ```
 __dir__([obj]) : get the list of attributes in module [obj]

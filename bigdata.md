@@ -28,3 +28,8 @@
 
 * PageRank
   * [쉽게 설명한 페이지 랭크 알고리즘](https://sungmooncho.com/2012/08/26/pagerank/)
+
+## Message Queue
+* MQ
+  * [Message Queue란?](http://zzong.net/post/3)
+  * [Message Queue는 왜 사용해야 하는가?](http://www.icelancer.com/2016/12/message-queue.html)
