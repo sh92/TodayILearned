@@ -13,7 +13,7 @@
   * IGMP, BGP/OSPF
 
 * The Process of data transmission in TCP/IP
-  * Data Link and MTU? [Link](http://ddooooki.tistory.com/15)
+  * Data More and MTU? [More](http://ddooooki.tistory.com/15)
 
 * RTT? Throughput? Latency? BandWidth?
   * [Measure TCP Max Throughput](http://nenunena.tistory.com/149)
@@ -30,13 +30,13 @@
 ### IP
 * IPv4 vs IPv6
 * IPv4 A,B,C,D class <-> CIDR/VLSM
-  * [Link](http://ddooooki.tistory.com/18)
+  * [More](http://ddooooki.tistory.com/18)
   * CIDR : Supernetting, ex) BGP
   * VLSM : Subnetting, ex) RIP, RIP, OSPF, IS-IS, EIGRP(Extended IGRP), BGP-4 etc
 * Public, Private IP
   * NAT
 * IP Header
-  * [Link](http://ddooooki.tistory.com/17)
+  * [More](http://ddooooki.tistory.com/17)
 
 ### HTTP
 * HTTP1.0 vs 1.1 vs 2.0

@@ -9,6 +9,11 @@
 * Transaction?
   * ACID? [Link](http://mommoo.tistory.com/62)
 
+* Index
+  * Advantage and Disadvantage  
+
+* MyISAM vs Innodb  
+
 * B-Tree vs B+Tree
 
 * SQL Tunning?
