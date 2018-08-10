@@ -24,7 +24,8 @@
 * MyISAM vs Innodb  
   * [Storage Engine](http://skibis.tistory.com/18)
   * [More](http://ojava.tistory.com/25) [More2](http://needjarvis.tistory.com/45)
-  * [Transaction Isolation Level](http://gywn.net/2012/05/mysql-transaction-isolation-level/)
+  * [Transaction Isolation Level I](http://gywn.net/2012/05/mysql-transaction-isolation-level/)
+  * [Transaction Isolation Level II](http://feco.tistory.com/45)
 
 * SQL
   * [SQL JOIN](https://www.w3schools.com/sql/sql_join.asp)

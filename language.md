@@ -13,7 +13,9 @@
 
 ## Python
 
-* [GIL](https://realpython.com/python-gil/)
+* [GIL](https://realpython.com/python-gil/) 
+  * [More](https://blog.seulgi.kim/2015/01/global-interpreter-lock.html)
+  * [More2](https://code.i-harness.com/ko/q/13c02e)
 
 * [@staticmethod vs @classmethod](https://code.i-harness.com/ko/q/213a1)
 

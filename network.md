@@ -54,6 +54,7 @@
     * SPDY  
   * HTTP vs HTTPS  
     * SSL/TLS
+  * [Keep-Alive](http://hamait.tistory.com/341)
 
 * Routing?
 
