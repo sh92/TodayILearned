@@ -35,7 +35,9 @@
   * [SQL 정리](https://blog.outsider.ne.kr/22)
 
 * B-Tree vs B+Tree
+  * [B-Tree and B+트리](http://potatoggg.tistory.com/174)
 
-* SQL Tunning?
+* SQL Tunning
+  * [7가지 방법론](http://scidb.tistory.com/entry/SQL%ED%8A%9C%EB%8B%9D-%EB%B0%A9%EB%B2%95%EB%A1%A0)
 
-* ERD?
+* [ERD](https://m.blog.naver.com/PostView.nhn?blogId=windi97&logNo=220852655040&proxyReferer=https%3A%2F%2Fwww.google.co.kr%2F)
