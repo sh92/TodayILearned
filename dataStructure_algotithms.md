@@ -40,6 +40,10 @@
   * Fully connected binary Tree
   * Complete binary Tree
 
+* Tries
+  * [HackerRank](https://www.youtube.com/watch?v=zIjfhVPRZCg)
+  * [Trie Implementation](https://github.com/careercup/CtCI-6th-Edition/blob/master/Java/CtCILibrary/CtCILibrary/Trie.java)
+
 ### Minimum Spanning Tree
 * Kruskal's Algorithm
 * Prim's Algorithm

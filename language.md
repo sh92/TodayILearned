@@ -11,6 +11,10 @@
 
 * [Override vs Overload](http://hyeonstorage.tistory.com/185)
 
+* [Serialization](http://woowabros.github.io/experience/2017/10/17/java-serialize.html)
+
+* [RMI란](http://0yumin.tistory.com/16)
+
 ## Python
 
 * [GIL](https://realpython.com/python-gil/) 
@@ -36,3 +40,8 @@ __dir__([obj]) : get the list of attributes in module [obj]
 
 * es6?
  * var vs let
+
+
+## Scala
+
+* [Scala 정리 사이트](https://github.com/funfunStudy/study/wiki/Programming-in-scala-%EC%A0%95%EB%A6%AC)
