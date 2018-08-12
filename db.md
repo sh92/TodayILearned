@@ -33,6 +33,7 @@
   * [SQL JOIN](https://www.w3schools.com/sql/sql_join.asp)
   * [MYSQL SQL 정리](https://m.blog.naver.com/springlady8/220694359562)
   * [SQL 정리](https://blog.outsider.ne.kr/22)
+  * [Union All vs Union Distint](http://brownbears.tistory.com/126?category=191941)
 
 * B-Tree vs B+Tree
   * [B-Tree and B+트리](http://potatoggg.tistory.com/174)

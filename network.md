@@ -52,9 +52,10 @@
 * [HTTP1.0 vs 1.1 vs 2.0](http://americanopeople.tistory.com/115)
   * HTTP 2.0
     * SPDY  
-  * HTTP vs HTTPS  
+  * [HTTP vs HTTPS](http://jeong-pro.tistory.com/89)
     * SSL/TLS
   * [Keep-Alive](http://hamait.tistory.com/341)
+  * [웹 개발자가 http완벽가이드를 읽는법](https://blog.npcode.com/2015/06/07/%EC%9B%B9-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EB%A5%BC-%EC%9C%84%ED%95%9C-http-%EC%99%84%EB%B2%BD-%EA%B0%80%EC%9D%B4%EB%93%9C-%EC%9D%BD%EB%8A%94-%EB%B2%95/)
 
 * Routing?
 
