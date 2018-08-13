@@ -22,3 +22,5 @@
 * [Backend](https://www.recruityourninja.com/technical-interview-questions-backend-candidates/)
 
 * [Junior를 위한 취업정보 ****](https://github.com/jojoldu/junior-recruit-scheduler)
+
+* [Resume 예시](http://woowabros.github.io/experience/2017/07/17/resume.html)

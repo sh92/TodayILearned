@@ -1,5 +1,7 @@
 # Data Structure & Algorithms
 
+* [P-NP](https://namu.wiki/w/P-NP%20%EB%AC%B8%EC%A0%9C)
+
 ### Basic Structure
 
 * Array List vs Linked List
@@ -72,6 +74,7 @@
   * [여러 자료구조 간단정리](http://eyeshot1st.tistory.com/36)
 
 ### Hash Function
+* [Hash Table](http://luyin.tistory.com/191)
 * Hash Map
 * Hash Set
 

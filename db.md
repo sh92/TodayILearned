@@ -1,9 +1,10 @@
 # Database
 
-* Database Component
-  * Row(=Record) : Entity
-  * Column(=Field) : Attribute
-  * Relationship
+* Database ComponentA
+  * Relation : relationship set, Entity Set, Table
+  * Row: Entity, Tuple, Record
+  * Column : Attribute, Field
+  * [More](http://www.jidum.com/jidums/view.do?jidumId=107)
 
 * [Schema](http://ykcb.tistory.com/entry/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EC%8A%A4%ED%82%A4%EB%A7%88%EC%9D%98-%EA%B0%9C%EB%85%90-%ED%8A%B9%EC%A7%95)
 
