@@ -18,6 +18,7 @@ when?
 
 * 프로세스상태
 [More](https://www.tutorialspoint.com/operating_system/os_processes.htm)
+[Picture](https://image.slidesharecdn.com/03-processes-131029135641-phpapp02/95/processes-control-block-operating-system-26-638.jpg?cb=1383055102)
 
 * UniProgramming vs MultiProgramming  
 UniProgramming은 하나의 프로그램을 사용하고MultiProgramming은 여러 프로그램을 하나의 CPU가 time quantum을 두고 사용한다.

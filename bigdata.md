@@ -1,12 +1,16 @@
 # BigData and DataScience
 
+* [OLTP vs OLAP](https://m.blog.naver.com/PostView.nhn?blogId=llggdd&logNo=130185455344&proxyReferer=https%3A%2F%2Fwww.google.co.kr%2F)
+
 ## Hadoop and Mapreduce
 
 * [Hadoop 설명](https://www.joinc.co.kr/w/man/12/aws/bigdata/Fundamentals3)
-* Mapreduce
+* [Hadoop v1 vs Hadoop v2](http://ecycle.tistory.com/6)
+* Map + reduce
 * Shuffling
 * Combiner
 * Partitioning
+* [Zookeeper](http://over153cm.tistory.com/category/-----%20Big%20Data%20----/Hadoop)
 
 ## Spark
 

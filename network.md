@@ -51,7 +51,7 @@
 ### HTTP
 * [HTTP1.0 vs 1.1 vs 2.0](http://americanopeople.tistory.com/115)
   * HTTP 2.0
-    * SPDY  
+    * [SPDY](https://libosong.appspot.com/spdy/index.html#1)
   * [HTTP vs HTTPS](http://jeong-pro.tistory.com/89)
     * SSL/TLS
   * [Keep-Alive](http://hamait.tistory.com/341)
