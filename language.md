@@ -1,5 +1,13 @@
 # Programming Language
 
+* [Design Pattern](https://www.journaldev.com/1827/java-design-patterns-example-tutorial#)
+  * Creational Design Pattern
+    * Solution to initiate a object in best possible way.
+  * Strucutral Design Pattern
+    * Different ways to create class structure.
+  * Behavior Design Pattern
+    * Solution for the better interaction between objects.
+	* Loose coupling and flexibility to extend easily.
 * [정적언어 vs 동적언어](http://itmining.tistory.com/65)
 * [TDD vs BDD](https://codeutopia.net/blog/2015/03/01/unit-testing-tdd-and-bdd/)
 * [Callback이란](https://openwiki.kr/tech/callback)
@@ -35,6 +43,14 @@
 
 * [volatile](https://nesoy.github.io/articles/2018-06/Java-volatile)
 
+* [Asynchronous vs Non-blocking vs Blocking](https://stackoverflow.com/questions/7931537/whats-the-difference-between-asynchronous-non-blocking-event-base-architectu/9489547#9489547)
+
+* sleep vs wait
+  * [sleep() vs wait() vs yield](https://stackoverflow.com/questions/1036754/difference-between-wait-and-sleep)
+  * [Using wait/notify vs Thread.sleep() in Java](http://www.qat.com/using-waitnotify-instead-thread-sleep-java/)
+  * [Difference between sleep and wait](https://stackoverflow.com/questions/1036754/difference-between-wait-and-sleep)
+
+* [StringBuffer vs StringBuilder](https://itblackbelt.wordpress.com/2015/01/31/difference-between-string-stringbuilder-and-stringbuffer-classes-with-example-java/)
 
 ## Python
 
@@ -55,7 +71,13 @@
 
 * [다양한 파이썬 Pypy, Cpython](http://khanrc.tistory.com/entry/%EB%8B%A4%EC%96%91%ED%95%9C-Python%EB%93%A4)
 
-* [asyncIO란](https://tech.ssut.me/2015/07/09/python-3-play-with-asyncio/)
+* Asycio and aiohttp
+  * [asyncIO란](https://tech.ssut.me/2015/07/09/python-3-play-with-asyncio/)
+  * [Making 1 million requests with python-aiohttp](https://pawelmhm.github.io/asyncio/python/aiohttp/2016/04/22/asyncio-aiohttp.html)
+  * [aiohttp를 이용해 서버를 만들어보자](http://meonggae.blogspot.com/2016/11/python-aiohttp.html)
+  * [A Web Crawler With asyncio Coroutines](http://www.aosabook.org/en/500L/a-web-crawler-with-asyncio-coroutines.html)
+
+* [Concurrent.futures](https://soooprmx.com/archives/5669)
 
 * [@staticmethod vs @classmethod](https://code.i-harness.com/ko/q/213a1)
 

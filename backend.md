@@ -9,6 +9,8 @@
 ### Performence
 
 * [서버 성능에 대한 이해](https://www.slideshare.net/sunnykwak90/ss-44875669)
+* [c10k](http://www.kegel.com/c10k.html)
+* [The Secret To 10 Million Concurrent Connections -The Kernel Is The Problem, Not The Solution](http://highscalability.com/blog/2013/5/13/the-secret-to-10-million-concurrent-connections-the-kernel-i.html)
 
 ### REST
 * [fine-grained resources vs coarse-grained resources](https://thamaliwijewardhana.wordpress.com/2016/03/29/fine-grained-resources-vs-coarse-grained-resources/)

@@ -7,9 +7,9 @@
 * [Hadoop 설명](https://www.joinc.co.kr/w/man/12/aws/bigdata/Fundamentals3)
 * [Hadoop v1 vs Hadoop v2](http://ecycle.tistory.com/6)
 * Map + reduce
-* Shuffling
-* Combiner
-* Partitioning
+* [Shuffling](http://develop.sunshiny.co.kr/8970)
+* [Combiner](https://data-flair.training/blogs/hadoop-combiner-tutorial/)
+* [Partitioner](https://data-flair.training/blogs/hadoop-partitioner-tutorial/)
 * [Zookeeper](http://over153cm.tistory.com/category/-----%20Big%20Data%20----/Hadoop)
 * [Shuffling 세부단계](http://develop.sunshiny.co.kr/897)
 
@@ -25,15 +25,17 @@
   * [Databricks dataframes](https://docs.databricks.com/spark/latest/dataframes-datasets/introduction-to-dataframes-python.html)
 
 
-
 ## Crawling, Scrapping and Search
 
 * Crawling vs Scrapping
   * [robots.txt와 meta태그의 robots의 차이](http://www.seo-korea.com/robots-txt-%ED%8C%8C%EC%9D%BC%EA%B3%BC-meta-robots-%ED%83%9C%EA%B7%B8%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90/)
 
-* [Comparison of python web crawler library](https://python.gotrained.com/python-web-scraping-libraries/)
-
 * Library
+  * [Comparison of python web crawler library](https://python.gotrained.com/python-web-scraping-libraries/)
+  * [A Web Crawler With asyncio Coroutines](http://www.aosabook.org/en/500L/a-web-crawler-with-asyncio-coroutines.html)
+
+* Github
+  * [Hadoop + scrapy 예시](https://github.com/fver1004/Library_Information_Extract)
 
 ## Search
 * Search
