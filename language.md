@@ -35,6 +35,7 @@
 
 * [volatile](https://nesoy.github.io/articles/2018-06/Java-volatile)
 
+
 ## Python
 
 * [Generator란](http://bluese05.tistory.com/56)

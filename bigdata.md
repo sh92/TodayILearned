@@ -11,6 +11,7 @@
 * Combiner
 * Partitioning
 * [Zookeeper](http://over153cm.tistory.com/category/-----%20Big%20Data%20----/Hadoop)
+* [Shuffling 세부단계](http://develop.sunshiny.co.kr/897)
 
 ## Spark
 
