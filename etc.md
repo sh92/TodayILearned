@@ -8,3 +8,5 @@
 * [Github Cheet-sheet](https://github.com/tiimgreen/github-cheat-sheet)
 * [컴퓨터의 분류](http://tip.daum.net/question/3700298)
 * [Web developer roadmap](https://github.com/kamranahmedse/developer-roadmap)
+* [Mac : oh-my-zsh설치](https://nolboo.kim/blog/2015/08/21/oh-my-zsh/)
+

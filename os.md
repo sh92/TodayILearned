@@ -37,6 +37,11 @@ UniProgramming은 하나의 프로그램을 사용하고MultiProgramming은 여�
 프로세스간 통신방법
 
 * Shared Memory vs Message Passing
+  * Shared Memory
+    * 장점: Context Switch 필요 없이 공유된 데이터를 사용하면 되므로 빠름
+	* 단점: 개발자 입장에서 구현 어려움
+  * Message Passing
+    * 구현은 쉽지만, kernel을 들어갔다 나와야 하므로 시간 오래걸림
 
 ## Thread
 
@@ -69,6 +74,74 @@ UniProgramming은 하나의 프로그램을 사용하고MultiProgramming은 여�
 * Micro Kernel and Monolitic Kernel
 
 ## I/O Management and Disk Scheduling
+
+### I/O 관리
+* 전송단위 : 디스크 안의 큰 블락이나 bytes of stream 
+* I/O Management 방식 : 1.Programmed I/O 2. Interrupt-driven I/O 3. Direct Memory Acces(DMA)
+  * Programmed I/O
+    * operation들이 완료 될때 까지 busy wating을 한다. polling 방법을 이용 - I/O가 빨리 끝날 수록 더 효율적: context switch 시간 더 걸림
+	* system call일 들어오면 커널 공간에 있는 kernel subsystem에서 디바이스와 디바이스 드라이버 인터페이스를 통해 통신하고 controller device에서 controller register의 bit를 setting 한다.
+    * polling
+      * busy-wating cycle은 I/O 를 기다림 -  busy bit가 clear 될때까지 반복적으로 기다림, Host가 write-bit를 설정하면 data-out register로 byte를 쓰게 된다. 
+	  * Host는 command-ready bit를 설정하고, busy bit를 설정하게 된다. controller란 controller register를 읽고 data-out register를 읽어 I/o를 한다. I/O가 완료되면 command-ready bit와 busy bit를 지운다.
+  * Interrupted-driven I/O
+    * Procedure
+	  * User Process는 시스템 콜을 사용
+	  * 커널은 device driver에게 device를 시작하라고 함
+	  * IRQ는 ISQ(Interrupt Service routine)이 실행되도록 함
+	  * 커널은 block에서 ready 상태로 변화하도록 만듬
+	* ISR
+	  * I/O 를 완료하도록 어떤 일을 함. 디바이스 버퍼에서 메인 메모리로 데이터를 전송
+  * DMA
+    * CPU를 거치지 않고 직접 메모리로 가서I/O를 관리
+	* 프로세스(CPU)가 DMA module에 권한을 위임하여 DMA modile이 I/O를 관리
+	* Interrupt방식 사용
+
+* 커널 I/O subsystem
+  * Role
+    * 디바이스 대기큐는 디바이스에 접근하도록 지원하며 시스템 콜은 자원을 allocation과 deallocation을 할 수 있도록 한다. 그리고 데드락을 주시한다.
+	* 스케줄링은 IO 장치에서 누구를 먼저 IO를 할것인가를 결정한다. 보통 먼저 들어온 순서대로
+    * 에러 헨들링 - 디스크에서 읽기, 쓰기로 부터 회복할 수 있다. 에러코드를 리턴한다.
+	* 시스템 에러는 문제 리포트를 로깅한다.
+	* 버퍼링 - 커널 I/O는 디바이스 간의 메모리를 저장할 수 있도록 버퍼를 다룬다.
+	  * 디바이스간 속도 차이 조절
+	  * 데이터 전송량 크기 조절
+	* 캐싱
+	  * fast memory holding copy of data 
+	* 스풀링
+	  * hold output for a device
+	  * 한번에 한개의 요청만 전달할 수 있다.
+	  * ex) 프린팅
+* Kernel 진입방법
+  1. 시스템 콜
+  2. 인터럽트
+  3. Trap
+
+### Disk Scheduling
+* device driver는 1차원 배열의 로지컬 블락(주소단위)으로 주소화 된다. 바깥 실린더의  첫번째 트렉의 첫번째 섹터가 sector0로 시작- 바깥에서 안쪽으로
+* 총 시간 : wait for device + watif for channel + (seek+ rotational delay + data transfer)(=device busy) 
+* 방식
+  * FIFO - 프로세스는 순차적으로 요청을 진행
+  * SSFT - (seek time이 짧은 순서 대로 요청을 처리)
+    * 우선순위가 늦은 애들은 더 도달하기 어려움 starvation 문제 발생
+  * SCAN - 엘리베이터 알고리즘으로 끝에서 끝으로 이동하는 방법
+* RAID 방식
+  * RAID - 0(non-reduendant) : 비쌈, 남은 디스크는 parity 정보를 저장하기 위해 사용됨
+  * RAID - 1 : 미러방식 가격 2배, 신뢰성 높아짐 
+  * RAID - 2 : 해밍코드를 이용한 방식 (1bit씩 분산해서 페리티 비트를 저장), 디스크 많이 필요 계산 많이 하고 잘 안씀
+  * RAID - 3 : (bit-interleaved parity) : 같은 위치에 흩어놓아서 패리티 비트 적용
+  * RAID - 4 : 블락레벨의 페리티, 한 디스크에 페리티 정보를 같은 위치상에 존재하는 블락들의 패리티를 적용. 각각 독립적으로 적용되어 조합되어 기다릴 필요가 없어 성능이 높다.하지만 패리티 디스크가 죽고 다른 디스크가 죽으면 복구 불가
+  * RAID - 5 : 블락레벨의 분산 패리티, level4와 동일하게 각블락의 레벨에 패리티가 적용되지만 여러 디스크에 분산해서 저장
+  * RAID - 6 : RAID5와 동일한 방식이지만, 패리티를 2개를 씀
+  * 0,1,5를 잘씀
+  * Combination : RAID01 < RAID10
+* 디스크 캐쉬(버퍼캐쉬)
+  * disk sector의 메인메모리의 버퍼, 디스크의 섹터에 어떤 복사본을 포함한다.
+  * replacemenet 정책 - LRU
+    * block이 캐쉬로 보내어지거나 참조 될때 스택의 탑이 대체된다.
+	* 캐쉬는 블락들로 구성되어 있다.
+	* 각각의 블락마다 카운터가 있다. 카운터는 매시간 접근한 블락에게 증가된다.
+	* 블락들은 짧은 기간동안 접근 된다.
 
 ## File Management
 
