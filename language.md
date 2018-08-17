@@ -101,10 +101,10 @@ __dir__([obj]) : get the list of attributes in module [obj]
 * Prototype?
 
 * es6
- * [es6 요약정리](http://web-front-end.tistory.com/21)
- * var vs let vs const
- * arrow
- * foreach
+  * [es6 요약정리](http://web-front-end.tistory.com/21)
+  * var vs let vs const
+  * arrow
+  * foreach
 
 * [closure 정의](https://hyunseob.github.io/2016/08/30/javascript-closure/)
 

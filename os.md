@@ -144,6 +144,60 @@ UniProgramming은 하나의 프로그램을 사용하고MultiProgramming은 여�
 	* 블락들은 짧은 기간동안 접근 된다.
 
 ## File Management
+* File
+  * 비슷한 레코드들의 집합
+  * Create, Delete, Open, Close, Read, Write 
+* File System structure
+  * boot block
+    * BIOS가 실행하여 boot loader를 실행
+  * super block
+    * 파일 시스템의 헤더 정보
+  * FCB list
+  * Data blocks
+* 파일 디렉토리 정보 != FCB정보
+  * 파일 디렉토리 정보
+    * 파일 이름, 파일 타입, 용량 할당 정도, 권한 
+* Inode
+  * inode : 한 파일이나 디렉토리의 모든 정보를 갖고 있는 64byte로 구성된 표
+  * i-list : 한 파일 시스템에서 파일이나 디렉토리들의 inode를 갖고 있는 표
+  * inumber : inode가 i-list에 등록되는 entry-number
+    * inode number를 보고 해당 inode의 정보를 가리킴
+  * inode number of root directory : 1
+
+* dangling pointer
+  * 아이노드 정보가 이미 지워진 허공을 가리키는 포인터
+  * 솔루션
+    1. 삭제되거나 지워진 파일시스템을 검색한다 x
+	2. 유저가 알아서 함- window
+	3. Back pointers.  x
+	4. Entry-hold-count solution -Linux/Unix
+
+* 파일 공유 두가지 이슈
+  1. 접근권한(owner, group, public access)
+  2. 동시 접근 문제
+
+* 동시 접근 문제
+  * updated 될때 file, record lock
+  * 공유 접근시 Mutual exclution 과 데드락 이슈 발생
+
+* Secondary storage management
+  * File allocation table을 사용
+    * Contiguous allocation
+	  * It must keep track of space available for allocation
+	  * 생성된 시간에 한 블락이 할당된다. Multil block 의 빠른 디스크 접근, 싱글집합에 할당됨
+	  * 단점: 파일 증가가 어려움, 외부 단편화 발생
+	* Chained allocation
+	  * 파일 할당 방법 개인 블락에 기초하여 할당, Linked List로 할당
+	  * 장점 -  파일 증가 문제 없음, 파일의 크기를 쉽게 조절해 나감, 외부 단편화 안일어남 파일 할당 안에 single entry 존재, 지역성의 원리의 acommodation 존재
+	  * 단점 - poor data safety, 마지막 블록을 알기 위해 순차적으로 접근해야함
+	* Indexed allocation
+	  * File allocation table은 각 파일에 대해 한 레벨의 인덱스로만 존재한다. index는 각 포인터에 대해 한 one entry 를 가진다.
+	  * 장점 : 직접 access, 외부단편화 없음, 파일 증가 문제 없음
+	  * 단점 : poor data safety
+
+* Free space Management
+  * startblock number, # of free blocks
+  * Bit vector(map)를 사용
 
 ## Concurrency(Mutual Exclusion and SynChronization)
 
