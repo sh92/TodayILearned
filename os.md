@@ -323,3 +323,149 @@ void philosophre(int i ) {
 
 ## Memory Mangaement
 
+* 멀티 프로세스에게 수용된 메모리를 나누는 것, ready process에게 프로세스시간을 소비하도록 합리적으로 할당해주는 것
+
+* Memory Protection은 권한 없이 참조 못함
+  * 컴파일 타임에 참조할 수 없고, 런타임에 참조함
+  * memory protection은 프로세서에 의해 참조되어야한다.
+
+* Relocation
+  * 실행시간 동안 프로세스가 다른 메모리 위치를 차지할 수 있다.
+    * Swapping
+	* Compaction
+  * 그 프로그램이 실행하는 동안, 디스크에 swap되고 바뀐 위치를 메인메모리에 반환한다.
+  * 메모리 참조는 코드 안에서 실제 pysical memory 주소로 변환되어야한다.
+
+* 메인 메모리 파티셔닝
+  * Fixed Partitioning (equal size, Unequal size aptitioning)
+    * Segmentation
+	* Patition이 꽉차면 시스템은 process를 swap out한다.
+	* 내부 단편화가 발생할 수 있다. -> 메모리 사용의 비효율성
+	* 장 관리 쉽다 단 메모리 비효율적 관리
+  * Dynamic partitioninig
+    * Paging - 외부 단편화가 발생 - compaction -> relocation필요
+    * first-fit
+	* best-fit
+	* worst-fit
+	* next-fit
+
+* 메모리 종류
+  * 물리적 메모리
+  * 논리적 메모리
+  * 상대주소
+  * 가상 메모리(main memory + memory on disk)
+
+* Address binding
+  * Compile Time
+  * Load Time
+  * Execution Time (요즘 쓰는 타입의 바인딩)
+
+* Hardware for Execution Time Binding
+  * Base register
+    * Starting address for the process
+  * Bounds register(limit register)
+    * Endling location of the process
+
+* Paging
+  * The partition memory into small-size equal fixed chunks and divide each process into the same size chunks
+  * frame size = page size = disk block size
+  * Internal fragmentation
+
+* Page Table
+  * OS maintains a page table for each process
+  * Table index, Content of the table
+  * Logical Address = page number + offset withing the page
+
+* Segmentation
+  * All segments of all programs do not have to be of the same length
+    * There is a maximum segment length
+	* Simmilar to dynamic partitioning
+  * Address = a segment number + an offset
+
+### Virtual Memory
+
+* Memory references ar dydnamically translated in pyhsical addresses at runtime
+  * relocation
+* Page or segment - Do not need to located contiguously in main memory
+* 실행시간 동안 Main memory에 로드될 필요가 없는 모든 프로세스
+
+* 장점
+  * 프로세스의 크기가 메인메모리 보다 크다.
+  * Ready state가 있는 더 많은 프로세스가 메인메모리에 유지될지 모른다.
+
+* Execution of a Program
+ * OS brings into main memory a few pieces of the program
+ * Resident set : a portion of process that is in main memory
+
+* Types of Memory
+  * Real Memory
+  * Virtual Memory
+  * OS must be able to manage the movement of pages and/or segments between secondary memory and main memory
+
+* 2 methods for virtual Memory
+  * By paging -> demand paging : The pages needed to access are brought into main memory
+  * By segmentation -> deand segmentation : The logical address into pysical memory
+
+* Page table is used to map(translate) the logical(virtual) address into physical memory
+* Virtual(logical) address used in processes
+* Real(physical, absolute) address in main memory
+
+* Page Table Entry
+  * Each page table entry contains the frame number of the corresponding page in main memory.
+  * The entry also contains control information
+* Virtual Address
+  * Page Number(20 bits) + Offset(12bits)
+* Page Table Entry
+  * V: valid bit(1bit), page frame number(20bit), D: Dirty bit(1bit), U: User mode (if set, this page belongs to user process), W: writable (if set, this page is writable), COW : if set, this page is Copy-On-Write mode page
+* Size of Page tables
+  * Multi-level pages table
+  * Inverted pages table
+
+* Translation Lookaside Buffer
+  * Each virtual memory reference can cause two or three pysical memory accesses -> time consuming
+    * solution high-speed cache in the CPU
+	* TLB - associative memory
+* Page replacement Algorithms
+  * FIFO
+  * Optimal policy
+  * LRU
+  * Clock Policy(second chance alogirhtms)
+* Resident Set Size - In main memory
+  * Fixed-allocation
+  * Variable-allocation
+    * Global Scope - Recently
+
+* Thrashing
+  * Degree of multiprogramming : number of processes in memory
+  * When swapping out a pice of a process just before that piece is needed, page fault occurs frequently.
+  * if a process doesnot have "enough" pages, the page-fault rate is very high.
+  * Thrasing : the processor spends most of its time swapping pieces (disk I/O) rather than executing user instructions
+
+* Process suspension
+  * Curent resident processes must be swapped out to reduce Thrashing
+
+## UniProcessor Scheduling
+
+* Long-term scheduling
+* Medium-term scheduling
+* Short-term Shceduling
+* I/O schduling
+
+* When to invoke scheduler?
+  * When a process enters to ready state ( switches from wait state, or arrival of new porcess) - preemtive
+  * Switches from running to ready state - preemtive
+  * Switches from running to block(wait) state - nonpreemptive
+  * Termintates - nonpreemptive
+
+* Scheduling Criteria
+  * CPU utilization
+  * Throughput
+  * Turnaround time
+  * Response time
+  * Wating time
+
+* Scheduling Way (Priority - Priority Queue)
+  * FCFC, FIFO
+  * Round-Robin
+  * Shortest Process Next
+  * Shortest Remaining Time First
