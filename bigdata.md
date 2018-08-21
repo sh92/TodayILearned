@@ -37,6 +37,8 @@
 * Github
   * [Hadoop + scrapy 예시](https://github.com/fver1004/Library_Information_Extract)
 
+* [빅데이터 분석 서비스 지원을 위한 지능형 웹 크롤러 논문](http://semantics.kisti.re.kr/publications/files/DOMESTIC_JOURNAL/DJ-063.pdf)
+
 ## Search
 * Search
   * [검색엔진 라이브러리](http://khanrc.tistory.com/entry/%EA%B2%80%EC%83%89%EC%97%94%EC%A7%84-%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC)

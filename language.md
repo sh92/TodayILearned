@@ -52,6 +52,8 @@
 
 * [StringBuffer vs StringBuilder](https://itblackbelt.wordpress.com/2015/01/31/difference-between-string-stringbuilder-and-stringbuffer-classes-with-example-java/)
 
+* [Synchronized](http://arer.tistory.com/54)
+
 ## Python
 
 * [Generator란](http://bluese05.tistory.com/56)

@@ -174,7 +174,7 @@
     * Reduce the response time for client request, particularly if the bottleneck bandwidth between client and the cache is much less than the bottleneck bandwitdth between the client and the cache
 	* Reduce traffic on an institution's access link to the internet
 	  * CDN
-	    * institutional network\(100 Mbps LAN\) (\ has insitutional cache \) - 15Mbps access link - public access internet
+	    * institutional network\(100 Mbps LAN\) \( has insitutional cache \) - 15Mbps access link - public access internet
 
 * FTP
  * Commands
@@ -242,7 +242,17 @@
   * [UDP](https://github.com/sh92/Network-University/tree/master/UDP_FTP)
   * [TCP](https://github.com/sh92/Network-University/tree/master/rawsocket_tcp)
 
+* IP
+  * unreliable data transfer
+
+* [TCP/UDP socket programming](https://github.com/sh92/Network-University/tree/master/rawsocket_tcp)
+* TCP
+  * reliable data transfer
+  * congestion control
+
 ### ETC
+
+* [SAMBA](http://imakeworld.egloos.com/4710527)
 
 * POST vs GET method
 
