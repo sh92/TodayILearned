@@ -3,11 +3,34 @@
 * [Design Pattern](https://www.journaldev.com/1827/java-design-patterns-example-tutorial#)
   * Creational Design Pattern
     * Solution to initiate a object in best possible way.
+	  * Singleton Pattern
+	  * Factory Pattern
+	  * Abstract Factory Pattern
+	  * Builder Pattern
+	  * Prototype Pattern
   * Strucutral Design Pattern
     * Different ways to create class structure.
+	  * Adapter Pattern
+	  * Composite Pattern
+	  * Proxy Pattern
+	  * Flyweigth Pattern
+	  * Facade Pattern
+	  * Bridge Pattern
+	  * Decorator Pattern
   * Behavior Design Pattern
     * Solution for the better interaction between objects.
 	* Loose coupling and flexibility to extend easily.
+	  * Template Method Pattern
+	  * Mediator Pattern
+	  * Chain of Responsibility Pattern
+	  * Observer Pattern
+	  * Strategy Pattern
+	  * Command Pattern
+	  * State Pattern
+	  * Visitor Pattern
+	  * Interpreter Pattern
+	  * Iterator Pattern
+	  * Memento Pattern
 * [정적언어 vs 동적언어](http://itmining.tistory.com/65)
 * [TDD vs BDD](https://codeutopia.net/blog/2015/03/01/unit-testing-tdd-and-bdd/)
 * [Callback이란](https://openwiki.kr/tech/callback)

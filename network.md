@@ -177,17 +177,17 @@
 	    * institutional network\(100 Mbps LAN\) \( has insitutional cache \) - 15Mbps access link - public access internet
 
 * FTP
- * Commands
-   * USER username
-   * PASS password
-   * LIST
-   * RETR filename
-   * STOR filename
- * response message
-   * 331 Username OK, password required
-   * 125 Data connection already open; transfer starting
-   * 425 cant' open data connetion
-   * 452 Error writing file
+  * Commands
+    * USER username
+    * PASS password
+    * LIST
+    * RETR filename
+    * STOR filename
+  * response message
+    * 331 Username OK, password required
+    * 125 Data connection already open; transfer starting
+    * 425 cant' open data connetion
+    * 452 Error writing file
 
 * Email
   * Alice's agent -\(SMTP\) Alice's mail server ->\(SMTP\) Bob's mail Server ->\(POP3, IMAP, HTTP\) Bob's agent
@@ -245,12 +245,13 @@
 * IP
   * unreliable data transfer
 
-* [TCP/UDP socket programming](https://github.com/sh92/Network-University/tree/master/rawsocket_tcp)
 * TCP
   * reliable data transfer
   * congestion control
 
 ### ETC
+
+* [blocking vs nonblocking vs synchronous vs asynchronous](https://homoefficio.github.io/2017/02/19/Blocking-NonBlocking-Synchronous-Asynchronous/)
 
 * [SAMBA](http://imakeworld.egloos.com/4710527)
 

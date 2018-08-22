@@ -1,21 +1,27 @@
 # BigData and DataScience
 
 * [OLTP vs OLAP](https://m.blog.naver.com/PostView.nhn?blogId=llggdd&logNo=130185455344&proxyReferer=https%3A%2F%2Fwww.google.co.kr%2F)
+* [BI/DW, ETL, MSBI](https://www.linkedin.com/pulse/what-bi-dw-etl-msbi-ajay-kumar/)
 
 ## Hadoop and Mapreduce
+
+* [Mapreduce paper](https://ai.google/research/pubs/pub62)
 
 * [Hadoop 설명](https://www.joinc.co.kr/w/man/12/aws/bigdata/Fundamentals3)
 * [Hadoop v1 vs Hadoop v2](http://ecycle.tistory.com/6)
 * Map + reduce
-* [Shuffling](http://develop.sunshiny.co.kr/8970)
+* [Shuffling](http://develop.sunshiny.co.kr/897)
 * [Combiner](https://data-flair.training/blogs/hadoop-combiner-tutorial/)
 * [Partitioner](https://data-flair.training/blogs/hadoop-partitioner-tutorial/)
 * [Zookeeper](http://over153cm.tistory.com/category/-----%20Big%20Data%20----/Hadoop)
 * [Shuffling 세부단계](http://develop.sunshiny.co.kr/897)
 
+* [HBase](http://cyberx.tistory.com/164)
+
 ## Spark
 
 * [Learning Spark](https://d2.naver.com/news/8818403)
+* [Spark Shuffle](https://swalloow.github.io/spark-shuffling)
 * [rdd](https://www.quora.com/Why-is-RDD-immutable-in-Spark)
 * map vs flatmap
   * [map vs flatmap - Korean](https://smlee729.wordpress.com/2016/06/29/spark-map-flatmap-operations/)
@@ -24,6 +30,8 @@
 * [Dataframe](http://12bme.tistory.com/307)
   * [Databricks dataframes](https://docs.databricks.com/spark/latest/dataframes-datasets/introduction-to-dataframes-python.html)
 
+
+* [Flume](http://taewan.kim/post/flume_images/)
 
 ## Crawling, Scrapping and Search
 
@@ -61,6 +69,8 @@
 * PageRank
   * [쉽게 설명한 페이지 랭크 알고리즘](https://sungmooncho.com/2012/08/26/pagerank/)
 
+* [Bag of words](https://springloops.github.io/archivers/Bag_of_words-28BoW-29-Natural_Language_processing_%EB%B0%9C%EB%B2%88%EC%97%AD)
+
 ## Message Queue
 * MQ
   * [Message Queue란?](http://zzong.net/post/3)
@@ -78,6 +88,10 @@ Document classifiers에 사용되는 알고리즘들
 * Logistic Regression
 * Support Vector Machines
 
+* [tf idf란](https://thinkwarelab.wordpress.com/2016/11/14/ir-tf-idf-%EC%97%90-%EB%8C%80%ED%95%B4-%EC%95%8C%EC%95%84%EB%B4%85%EC%8B%9C%EB%8B%A4/)
+
 * [검색엔진 구조](http://librarians.tistory.com/210)
 * [검색엔진을 위한 역색인 설명](https://blog.lael.be/post/3056)
 * [역색인](http://giyatto.tistory.com/2)
+
+
