@@ -16,7 +16,6 @@
 * [Zookeeper](http://over153cm.tistory.com/category/-----%20Big%20Data%20----/Hadoop)
 * [Shuffling 세부단계](http://develop.sunshiny.co.kr/897)
 
-* [HBase](http://cyberx.tistory.com/164)
 
 ## Spark
 
@@ -30,8 +29,13 @@
 * [Dataframe](http://12bme.tistory.com/307)
   * [Databricks dataframes](https://docs.databricks.com/spark/latest/dataframes-datasets/introduction-to-dataframes-python.html)
 
+* [RDD partitioning](http://ourcstory.tistory.com/156)
 
+## FLUME
 * [Flume](http://taewan.kim/post/flume_images/)
+
+## HBASE
+* [HBase](http://cyberx.tistory.com/164)
 
 ## Crawling, Scrapping and Search
 
@@ -93,5 +97,10 @@ Document classifiers에 사용되는 알고리즘들
 * [검색엔진 구조](http://librarians.tistory.com/210)
 * [검색엔진을 위한 역색인 설명](https://blog.lael.be/post/3056)
 * [역색인](http://giyatto.tistory.com/2)
+
+* 문서 분류 방법
+  * knn
+  * tf\-idf
+  * [naive bayesian](http://bcho.tistory.com/1010)
 
 

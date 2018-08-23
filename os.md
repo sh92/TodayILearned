@@ -49,6 +49,8 @@ UniProgramming은 하나의 프로그램을 사용하고MultiProgramming은 여�
 프로세스 안에서 실행하는 단위
   * Execution state : (running, ready)
 
+* [Thread Safe?](http://gompangs.tistory.com/7)
+
 * Thread vs Process
 
 * MultiThreading?  
