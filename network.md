@@ -14,7 +14,9 @@
 ### TCP vs UDP
 * UDP
   * Checksum
+    * provide for error detection
   * DNS 53, DHCP 67/68
+  * two-tuple(destination ip, destination port)
 * TCP
   * [Flow contorl and Congestion Control](http://jwprogramming.tistory.com/36)
   * 3-way HandShaking vs 4-way Handshaking
@@ -56,6 +58,9 @@
   * NAT
 * IP Header
   * [More](http://ddooooki.tistory.com/17)
+  * Best-effort delivery service
+  * unreliable service
+  * [transport-layer multiplexing and demultiplexing](http://blog.naver.com/PostView.nhn?blogId=gkenq&logNo=220693036639)
 
 ### HTTP
 * [HTTP1.0 vs 1.1 vs 2.0](http://americanopeople.tistory.com/115)
@@ -242,12 +247,42 @@
   * [UDP](https://github.com/sh92/Network-University/tree/master/UDP_FTP)
   * [TCP](https://github.com/sh92/Network-University/tree/master/rawsocket_tcp)
 
-* IP
-  * unreliable data transfer
 
-* TCP
-  * reliable data transfer
-  * congestion control
+## Transport Layer
+* TCP and UDP
+  * transport-layer
+    * packet - segments
+	* Connection-Oriented multiplexing and demultiplexing
+	* well-known port number
+	  * 0 to 1023
+	  * 0 to 65535
+  * TCP
+    * reliable data transfer
+    * congestion control
+	* flow control
+	* multiplexing
+	  * TFM
+	  * FDM
+	* rdt1
+	  * sending side
+      * receiving side
+	* rdt2
+	  * rdt2.1 2.2
+	  * ARQ
+	    * Error detetion
+		* Receiver feedback
+	  * stop-and-wait ARQ
+    * rdt3.0
+	  * Pipelined Reliable Data Transfer Protocols
+	  * Stop-and-wait
+	  * Utilization of the sender =  L/R / RTT+L/R
+	* Go-Back-N and selective repeat
+	  * GBN - sliding-window-protocol
+
+## undirectional data transfer
+* undirectional data transfer
+* bidrectional data transfer- full-duplex 
+* Retransmission
 
 ### ETC
 
