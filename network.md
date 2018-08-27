@@ -247,7 +247,6 @@
   * [UDP](https://github.com/sh92/Network-University/tree/master/UDP_FTP)
   * [TCP](https://github.com/sh92/Network-University/tree/master/rawsocket_tcp)
 
-
 ## Transport Layer
 * TCP and UDP
   * transport-layer
@@ -278,6 +277,8 @@
 	  * Utilization of the sender =  L/R / RTT+L/R
 	* Go-Back-N and selective repeat
 	  * GBN - sliding-window-protocol
+	  * cumulative acknowledgment
+	  * timeout event
 
 ## undirectional data transfer
 * undirectional data transfer
