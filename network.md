@@ -288,18 +288,14 @@
 ### ETC
 
 * [blocking vs nonblocking vs synchronous vs asynchronous](https://homoefficio.github.io/2017/02/19/Blocking-NonBlocking-Synchronous-Asynchronous/)
-
 * [SAMBA](http://imakeworld.egloos.com/4710527)
-
 * POST vs GET method
-
 * CSMA/CD vs CSMA/CA
-
 * RCP, GRPC
 
-* Good Site
-  * [해당 사이트 Lecture Note 참고](http://www.ritsumei.ac.jp/~piumarta/networks/)
-
+### 참고할만한 사이트
+* [해당 사이트 Lecture Note 참고](http://www.ritsumei.ac.jp/~piumarta/networks/)
+* [후니의 쉽게쓴 시스코네트워킹 정리](http://jvinci.tistory.com/22)
 
 ### Reference
 Computer Networking A Top down approach
