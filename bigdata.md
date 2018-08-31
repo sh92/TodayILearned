@@ -46,7 +46,7 @@
   * [Comparison of python web crawler library](https://python.gotrained.com/python-web-scraping-libraries/)
   * [A Web Crawler With asyncio Coroutines](http://www.aosabook.org/en/500L/a-web-crawler-with-asyncio-coroutines.html)
 
-* Github
+* Github example
   * [Hadoop + scrapy 예시](https://github.com/fver1004/Library_Information_Extract)
 
 * [빅데이터 분석 서비스 지원을 위한 지능형 웹 크롤러 논문](http://semantics.kisti.re.kr/publications/files/DOMESTIC_JOURNAL/DJ-063.pdf)

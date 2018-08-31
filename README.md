@@ -7,10 +7,10 @@
 * [OS](./os.md)
 * [Network](./network.md)
 * [DataBase](./db.md)
-* [Datastructure and Algorithms](dataStructure_algorithms.md)
+* [Datastructure and Algorithms]("dataStructure_algorithms.md")
 * [Language](./language/README.md)
-  * [Design Pattern](./language/README.md)
   * [Java](./language/java.md)
+    * Design Pattern
   * [Python](./language/python.md)
   * [Javascript](./language/javascript.md)
   * [Scala](./language/scala.md)

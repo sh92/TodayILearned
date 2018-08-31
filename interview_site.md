@@ -16,12 +16,9 @@
   * [Hadoop관련 질문](http://118k.tistory.com/558)
   * [HDFS 관련 질문](http://118k.tistory.com/559)
 * [Spark](https://www.edureka.co/blog/interview-questions/top-apache-spark-interview-questions-2016/)
-* [Coding interview](https://github.com/jwasham/coding-interview-university)
 * [ElasticSearch](https://www.wisdomjobs.com/e-university/elasticsearch-interview-questions.html)
 * [Lucene and Solr](https://intellipaat.com/interview-question/apache-solr-interview-questions/)
 * [Network](https://career.guru99.com/top-100-networking-interview-questions-answers/)
 * [Backend](https://www.recruityourninja.com/technical-interview-questions-backend-candidates/)
 
-* [Junior를 위한 취업정보 ****](https://github.com/jojoldu/junior-recruit-scheduler)
-
-* [Resume 예시](http://woowabros.github.io/experience/2017/07/17/resume.html)
+* [Coding interview Univerity](https://github.com/jwasham/coding-interview-university)

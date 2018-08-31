@@ -1,11 +1,11 @@
 # Web
 
-### Rendering
+## Rendering
 
 * [웹 보여지기까지의 과정](https://medium.com/@pks2974/website%EB%8A%94-%EC%96%B4%EB%96%BB%EA%B2%8C-%EB%B3%B4%EC%97%AC%EC%A7%80%EA%B2%8C%EB%90%98%EB%8A%94-%EA%B1%B8%EA%B9%8C-1-108009d4bdb)
 * [웹 랜더링 과정](https://d2.naver.com/helloworld/59361)
 
-### Design
+## Design
 
 * [960 grid system](https://960.gs/)
 * [1200px.com](https://1200px.com/)
@@ -28,23 +28,23 @@
 * publicdomainarchive.com
 * freebie psd
 
-## wireframe
+### wireframe
 * [wireframe tool](http://codecondo.com/free-wireframe-tools/)
 
-## pattern
+### pattern
 
 * [toptal pattern](https://www.toptal.com/designers/subtlepatterns/)
 
-## Logo
+### Logo
 * [logo](http://logopond.com/)
 
-## font
+### font
 * google fonts
 * adobe typekit
 * standard fonts : Arial, Times New Roman , Georgian, Sans-serif, Serif
 
 
-##  Never use the following
+###  Never use the following
 * Flicker
 * Tempalte Monster
 * Google images
