@@ -71,19 +71,18 @@
 
 * AVL Tree
 * 2-3, 2-3-4 Tree
-* B-Tree, B+-Tree
-  * [여러 자료구조 간단정리](http://eyeshot1st.tistory.com/36)
+* B-Tree, B+-Tree, B\*Tree
+  * [Link](http://eyeshot1st.tistory.com/36)
 
 ### Hash Function
 * [Hash Table](http://luyin.tistory.com/191)
 * Hash Map
 * Hash Set
 
-* 알면 좋은 사이트  
+### String Search
+* [KMP](http://bowbowbow.tistory.com/6)
+
+# Algorithms visualization Site
 [Algorithms visualizer](http://algo-visualizer.jasonpark.me/#path=backtracking/knight's_tour/basic)  
 [Data structure visualization](https://www.cs.usfca.edu/~galles/visualization/Algorithms.html)
 
-
-### String Search
-
-* [KMP](http://bowbowbow.tistory.com/6)
