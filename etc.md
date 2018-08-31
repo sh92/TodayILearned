@@ -8,5 +8,10 @@
 * [Github Cheet-sheet](https://github.com/tiimgreen/github-cheat-sheet)
 * [컴퓨터의 분류](http://tip.daum.net/question/3700298)
 * [Web developer roadmap](https://github.com/kamranahmedse/developer-roadmap)
-* [Mac : oh-my-zsh설치](https://nolboo.kim/blog/2015/08/21/oh-my-zsh/)
 * [정량적 vs 정성적](https://m.blog.naver.com/PostView.nhn?blogId=sori121212&logNo=60193714694&proxyReferer=https%3A%2F%2Fwww.google.co.kr%2F)
+
+#### Shell and unix command
+* [Mac : oh-my-zsh설치](https://nolboo.kim/blog/2015/08/21/oh-my-zsh/)
+* [zsh 설치](https://github.com/sh92/TIL/blob/master/shell/zsh-usage.md)
+* [Bash script manual](https://blog.gaerae.com/2015/01/bash-hello-world.html)
+* [Curl](https://www.lesstif.com/pages/viewpage.action?pageId=14745703#curl%EC%84%A4%EC%B9%98%EB%B0%8F%EC%82%AC%EC%9A%A9%EB%B2%95-HTTPGET/POST,RESTAPI%EC%97%B0%EA%B3%84%EB%93%B1-%EA%B0%9C%EC%9A%94)

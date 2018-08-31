@@ -15,8 +15,8 @@
 * Photo OCR
 
 ### Precision and Recall
-Precission = TP / \(TP + TN\)
-Recall = TP  /  \(TP+FP\)
+* Precision = TP / \(TP + TN\)
+* Recall = TP  /  \(TP+FP\)
 
 ## Recommender system
 * Recommendation
@@ -32,18 +32,20 @@ Recall = TP  /  \(TP+FP\)
   * [Word2vec skip-gram model](http://mccormickml.com/2016/04/19/word2vec-tutorial-the-skip-gram-model/)
   * [Amazone recommendationn item-to-item collaborative filtering](https://www.cs.umd.edu/~samir/498/Amazon-Recommendations.pdf)
 
-* Types of recommender system
-  * Implicit and Explicit Rating
-    * Explicict Rating
-	  * star reviews
+#### Types of recommender system
+* Implicit and Explicit Rating
+  * Explicict Rating
+    * star reviews
+  * Implicit Rating
     * Implicit data give much more information
     * Implicit rating example
 	  * things to click on - is not always related with positive response, susceptible to fraud
 	  * things you purchase - great to use
 	  * things you consume - ex) youtube
-* Top-N recommander
-  * individual intertests - > cadidate generation < - > item similarities
-  * candidate gernerating - > cadndidate ranking -> filtering -> show top-N
+
+#### Top-N recommander
+* individual intertests - > cadidate generation < - > item similarities
+* candidate gernerating - > cadndidate ranking -> filtering -> show top-N
 
 #### Evaluating Recommendation System
 * Train/Test and K-fold cross validation
@@ -71,20 +73,22 @@ Recall = TP  /  \(TP+FP\)
 #### Contents-based filtering
 * Contents-based recommendation
 * Cosine Similarity
-* KNN, Contents Recys
+* KNN, Contents Recsys
   * Similarity scores between this items and all others ther user rated ->(sort) Top40 nearest movies ->(weighted average) rating prediction
 
 #### Neighborhood-based collaborative filtering
 * individual interests -> candidate generation <-> item simiarities
-  * candidate generation -> candidate ranking -> filtering -> items
+* candidate generation -> candidate ranking -> filtering -> items
 
-* similarity metrics
-  * cosine
-  * adjusted cosine =  sum\(\(\_x - xi\)\(\_y-yi\) /  \(sqrt\(sum\(xi-\_x\)\)+sqrt\(sum\(yi-\_y\)\)\)
-  * pearson
+* Similarity metrics
+  * Cosine
+  * Adjusted cosine =  sum\(\(\_x - xi\)\(\_y-yi\) /  \(sqrt\(sum\(xi-\_x\)\)+sqrt\(sum\(yi-\_y\)\)\)
+    * \_x : mean of xi
+    * \_y : mean of yi
+  * Pearson
   * Spearman
   * Mean square difference
-  * jaccard similiarity
+  * Jaccard similiarity
 
 * User-based collaborative filtering
   * user -> item rating matrix
@@ -98,12 +102,12 @@ Recall = TP  /  \(TP+FP\)
   * item -> item rating of users
   * item and item cosine silmilarity 
 
-* user-based KNN
+* User-based KNN
   * find the k most similar users 
   * compute mean sim socre weighted by ratings
   * ratings prediction
 
-* item-base KNN
+* Item-base KNN
   * find the k most similar itmes
   * compute mean sim socre wieghted by ratings
   * ratings prediction
@@ -114,15 +118,20 @@ Recall = TP  /  \(TP+FP\)
   * item-based
     * KNNWithZScore > KNNWithMeans > KNNWithBaseLine
 
+#### Deep Learning
+* [모두를 위한 딥러닝](https://hunkim.github.io/ml/)
 * [Deep Learning overview](https://arxiv.org/pdf/1404.7828v4.pdf)
-* [Cross entropy, softmax, costfunction](http://neuralnetworksanddeeplearning.com/chap3.html)
+* [Cross entropy, softmax, cost](http://neuralnetworksanddeeplearning.com/chap3.html)
 * [CNN](http://ufldl.stanford.edu/tutorial/supervised/ConvolutionalNeuralNetwork/)
 * [RBM](https://www.cs.toronto.edu/~rsalakhu/papers/rbmcf.pdf)
+
 
 * [Translated recommendation problem](https://sites.google.com/view/ruining-he/)
 * ALS
   * [ALS Collaborative Filtering](https://medium.com/radon-dev/als-implicit-collaborative-filtering-5ed653ba39fe)
   * [The alternating least squares algorithm](https://www.infofarm.be/articles/alternating-least-squares-algorithm-recommenderlab)
+
+#### Scalable Recsys
 
 * AWS
   * [Generating Recommendations at Amazon Scale with Apache Spark and Amazon DSSTNE](https://aws.amazon.com/ko/blogs/big-data/generating-recommendations-at-amazon-scale-with-apache-spark-and-amazon-dsstne/)
@@ -130,18 +139,26 @@ Recall = TP  /  \(TP+FP\)
   * sagemaker
   * laod ml-1m ratings ->  one-hot encode user & momvie -> build binary label vector -> conver to protobuf & write to s3 -> train, delpoy, predict
 
+#### Consideration in Real World
+
 * Stoplist
   * list that should not be contained. 
     * ex) illegal contents, dult-oriented content, drug use, religion, terror
-* filter bubble
+* Filter bubble
 * Transparency and Trust
 * Outlier
+* Click Stream is unreliable 
+* You should be careful about using personal information
+* Value-aware recommendation
 
 * Case Study
   * [Facebook Group Recommender system](https://www.researchgate.net/publication/220830049_Group_Recommendation_System_for_Facebook)
-  * [Facebook CollaborativeFiltering](https://code.fb.com/core-data/recommending-items-to-more-than-a-billion-people/)
+  * [Facebook Collaborative Filtering](https://code.fb.com/core-data/recommending-items-to-more-than-a-billion-people/)
   * [An Online News Recommender System for Social Network](https://pdfs.semanticscholar.org/f521/98651a339ca89408b300e777e98ee08f49dd.pdf)
-  * [Deep Neural Networks for Youtube Recommendation](Deep Neural Networks for YouTube Recommendations)
+  * [Deep Neural Networks for Youtube Recommendation](https://static.googleusercontent.com/media/research.google.com/ko//pubs/archive/45530.pdf)
+  * [Netflix Recsys paper 2018](https://beta.vu.nl/nl/Images/werkstuk-fernandez_tcm235-874624.pdf)
+  * [Amazon Recsys paper](https://www.cs.umd.edu/~samir/498/Amazon-Recommendations.pdf)
+
 
 ### NLP
 
