@@ -15,3 +15,8 @@
 * [zsh 설치](https://github.com/sh92/TIL/blob/master/shell/zsh-usage.md)
 * [Bash script manual](https://blog.gaerae.com/2015/01/bash-hello-world.html)
 * [Curl](https://www.lesstif.com/pages/viewpage.action?pageId=14745703#curl%EC%84%A4%EC%B9%98%EB%B0%8F%EC%82%AC%EC%9A%A9%EB%B2%95-HTTPGET/POST,RESTAPI%EC%97%B0%EA%B3%84%EB%93%B1-%EA%B0%9C%EC%9A%94)
+
+#### Loadmap for developer
+
+* [backend](https://d2.naver.com/news/3435170)
+* [developer roadmap](https://github.com/kamranahmedse/developer-roadmap)
