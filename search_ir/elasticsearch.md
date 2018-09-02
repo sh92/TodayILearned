@@ -6,7 +6,7 @@
   * type
   * dcoument
 
-* purpose of inverted indices 
+* Purpose of inverted indices 
   * search in reverse order
   * Quickly map search term to document
   * Load balancing search request across your cluster
@@ -14,16 +14,16 @@
 * Elasticsearch is built only for full-text search of documents
 
 * [Shard and Replica](http://guruble.com/elasticsearch-2-shard-replica/)
-  * shard
+  * Shard
     * it could let contents volume to be split horizontally
 	* it distributes jobs in serveral shards.It could accelate performence/throughput by parallelizing.
-  * replica
+  * Replica
     * High Availability
 	* It could search in parallel. it accelates performence/throughput.
 
 ## Search
-* curl
-  * curl setting
+* Curl
+  * Curl setting
     * $HOME/bin/curl
 	  * !bin/bash
 	  * chmod a+x curl
@@ -34,9 +34,9 @@
     * curl -XGET HOST:PORT/Path/\_search?pretty
   * Update
     * curl -XPOST HOST:PORT/Path/\_update -d '{json}'
-  * DELETE 
+  * Delete
     * curl -XDELETE HOST:PORT/Path?pretty
-  * REST API END point 
+  * REST API End Point 
     * \_search
     * \_update
 	* [\_bulk](https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-bulk.html)
@@ -56,13 +56,11 @@
 
 * Query String Search
   * HOST:PORT/Path\_search?q=+year:>2010+title:trek&pretty
-  * \+ : %2B
+  * '\+': %2B
   * ':' : %3A
   * '>' : %3E
   * cryptic and tough to debug
   * fragile
-
-user fileter when you can they faster and cacheable.
 
 * JSON Search
   * filter : ask a yes/no quesiton of your data
@@ -83,29 +81,30 @@ user fileter when you can they faster and cacheable.
 			"match_phrase": {
 			"title" : "blabla"
 			}
+		}
 	}
   ```
   * slop
     * How far you're willing to let a term move to statisfy a phrase 
-	  * "Hello Diseny world" would bmatch "Hello world" with a slope of 1
+	  * "Hello Diseny world" would match "Hello world" with a slope of 1
   * proximity queries - results are stored by relevance
 
 * Pagination Syntax
-  * curl -XGET HOST:PORT/PATH/\_search?size=2?&from=2&pretty'
-  * ```{pagination}
-  curl -XGET HOST:PATH/\_search?pretty -d 
+  * curl -XGET 'HOST:PORT/PATH/\_search?size=2?&from=2&pretty'
+  ```{pagination}
+  curl -XGET HOST:PATH/\_search?pretty -d '
   {
-  	"from" : 1,
+    "from" : 1,
 	"size : 3,
 	"query" : { "match":{"genre": "Sci-Fi"}}
-  }
+  }'
   ```
 
-* sort
+* Sort
   * curl -XGET HOST:PORT/Path/\_search?sort=year&pretty
   * if string
-    * text fields analyzed
-    * ```{map an unanalyzed copy using the keyword type}
+    * text fields are analyzed
+    ```{map an unanalyzed copy using the keyword type}
 	curl -XPUT HOST:PORT/Path -d '
 	{
 		"mappings": {
@@ -122,7 +121,7 @@ user fileter when you can they faster and cacheable.
 				}
 			}
 		}
-	}
+	}'
 	```
   * unanalyzed "raw" keyword fileds
     * curl -XGET HOST:PORT/Path/\_search?sort=title.raw&pretty
@@ -132,24 +131,27 @@ user fileter when you can they faster and cacheable.
 * Another filter
   * [must, must\_not, filter etc](https://www.elastic.co/guide/en/elasticsearch/reference/5.5/query-filter-context.html)
 
-* fuzzy matches
+* Fuzzy matches
   * a way to account for typos and mispellings
   * levenshtein edit distance
     * Substitutions of characters
     * Insertion of characters
 	* Deletion of characters
   * funzziness parameter
-    * in query : ```{fuzzy}
-	"fuzzy": {
-		"title":{"value":"Super Mario", "funzziness":2}
-	}
+    * In query 
+    ```{fuzzy}
+    "fuzzy": {
+  	  "title":{"value":"Super Mario", "funzziness":2}
+    }
+    ```
   * funzziness: AUTO
     * 0 for 1-2 character strings
 	* 1 for 3-5 character strings
 	* 2 for anything else
 
 * Partial Matching
-  * ```{partial}
+  * partial
+  ```{partial}
   curl -XGET HOST:PORT/_search?pretty' -d'
   {
   	"query": {
@@ -160,13 +162,14 @@ user fileter when you can they faster and cacheable.
   }'
   ```
   * wildcard quries
-    * ```{wildecard in Query}
-	"wildcard": {
+  ```{wildecard in Query}
+  "wildcard": {
 		"year": "2*"
-	}
-	```
+  }
+  ```
 * Search as you type
-  * ```{in Query}
+  * In query
+  ```{in Query}
   "match_phrase_prefix":{
   	"title": {
 		"query": "Hello world",
@@ -178,9 +181,9 @@ user fileter when you can they faster and cacheable.
     * unigram: [H,e,l,l,o]
 	* bigram: [He, el, ll, lo]
 	* trigram, 4-gram, N-gram
-  * indexing n-gram
-    1. create an "autocomplete analyzer" 
-	  * ```{indexing n-gram}
+  * Indexing n-gram
+    1. Create an "autocomplete analyzer" 
+	```{indexing n-gram}
 	"settings": {
   		"analysis": {
 			"filter": {
@@ -203,7 +206,7 @@ user fileter when you can they faster and cacheable.
 		}
 	}
 	```
-	2. map your filed with it 
+	2. Map your field with it 
 	```{properties}
 	curl -XPUT 'HOST:PORT/PATH?pretty' -d '
 	{
@@ -215,9 +218,9 @@ user fileter when you can they faster and cacheable.
 				}
 			}
 		}
-	}
+	}'
 	```
-    3. only use n-gram on the index side
+    3. Only use n-gram on the index side
 	```
 	curl -XGET HOST:PORT/PATH/_search?pretty -d '
 	{
@@ -229,7 +232,7 @@ user fileter when you can they faster and cacheable.
 				}
 			}
 		}
-	}
+	}'
 	```	
 ## Reference
 [Elastic Search 6 and Elastic Stack - In Depth and Hands On!](https://www.udemy.com/elasticsearch-6-and-elastic-stack-in-depth-and-hands-on/learn/v4/content)
