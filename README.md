@@ -1,13 +1,13 @@
 # Today I Learned
 
 1. This repository is to organize the Computer Science concept. 
-2. It has link about useful sites when I studied.
-3. It has contents when I studied in MOOC, Books, or Online Site. 
+2. It has links about useful sites when I studied.
+3. It has contents when I studied in MOOC, Books and Online Site. 
 
 * [OS](./os.md)
 * [Network](./network.md)
 * [DataBase](./db.md)
-* [Datastructure and Algorithms]("dataStructure_algorithms.md")
+* [Datastructure and Algorithms](dataStructure_algorithms.md)
 * [Language](./language/README.md)
   * [Java](./language/java.md)
     * Design Pattern

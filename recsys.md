@@ -99,26 +99,57 @@
   * item-based
     * KNNWithZScore > KNNWithMeans > KNNWithBaseLine
 
-#### Deep Learning
+### Matrix Factorization
+* [Matrix Factorization?](http://sanghyukchun.github.io/73/)
+* PCA
+* SVD
+* SVD++
+* Stochastic gradient descent <- ALS
+* SLIM
+
+#### Deep Learning with Recommand System
 * [모두를 위한 딥러닝](https://hunkim.github.io/ml/)
 * [Deep Learning overview](https://arxiv.org/pdf/1404.7828v4.pdf)
 * [Cross entropy, softmax, cost](http://neuralnetworksanddeeplearning.com/chap3.html)
 * [CNN](http://ufldl.stanford.edu/tutorial/supervised/ConvolutionalNeuralNetwork/)
 * [RBM](https://www.cs.toronto.edu/~rsalakhu/papers/rbmcf.pdf)
+  * [Introduction to Restricted Boltzmann Machines](http://blog.echen.me/2011/07/18/introduction-to-restricted-boltzmann-machines/)
 
+* Auto-Encoder
+* Click Stream Recommandatiaon with RNN
+  * [Session-Based Recommendation with Recurrent neural networks](https://arxiv.org/pdf/1511.06939.pdf)
+    * GRU -> GRU4REC(gated recurrent unit)
+	  * session-paralle mini-batches
+	  * sampling the output
+	  * ranking loss
+	  * BPR\(Bayesian Personalized Rankina\)
+	* [GRU4Rec github](https://github.com/Songweiping/GRU4Rec_TensorFlow)
 
 * [Translated recommendation problem](https://sites.google.com/view/ruining-he/)
 * ALS
   * [ALS Collaborative Filtering](https://medium.com/radon-dev/als-implicit-collaborative-filtering-5ed653ba39fe)
   * [The alternating least squares algorithm](https://www.infofarm.be/articles/alternating-least-squares-algorithm-recommenderlab)
 
-#### Scalable Recsys
+* Bleeding Edge 
+  * [DeepFM\(Deep Factorization Machine\)](https://arxiv.org/pdf/1703.04247.pdf)
+    * higher feature interations
+  * Recommendation with Word2vec
+  * 3D cnn's for session based recsys
+    * specific situationn : click stream 
+
+* When you use Deep Learning, Consideration
+  * Speed and Accuracy
+  * Hardware cost
+    * memory usage
+	* search speed
+  * Rendering time in web
+#### Scalable Recommand System
 
 * AWS
   * [Generating Recommendations at Amazon Scale with Apache Spark and Amazon DSSTNE](https://aws.amazon.com/ko/blogs/big-data/generating-recommendations-at-amazon-scale-with-apache-spark-and-amazon-dsstne/)
   * build -> train -> deploy
   * sagemaker
-  * laod ml-1m ratings ->  one-hot encode user & momvie -> build binary label vector -> conver to protobuf & write to s3 -> train, delpoy, predict
+  * load ml-1m ratings ->  one-hot encode user & momvie -> build binary label vector -> conver to protobuf & write to s3 -> train, delpoy, predict
 
 #### Consideration in Real World
 
@@ -140,3 +171,15 @@
   * [Netflix Recsys paper 2018](https://beta.vu.nl/nl/Images/werkstuk-fernandez_tcm235-874624.pdf)
   * [Amazon Recsys paper](https://www.cs.umd.edu/~samir/498/Amazon-Recommendations.pdf)
 
+* Hybrid Approaches
+  * ensemble approaches
+    * 107 different algorithms
+	* RBM and SVD\+\+
+	* GRU4Rec(gated recurrent unit)
+	* RBM and ContentKNN
+	* etc
+
+* [Netflix prize summary](http://blog.echen.me/2011/10/24/winning-the-netflix-prize-a-summary/)
+
+### Reference
+[Recommender system with Machine Learning](https://www.udemy.com/building-recommender-systems-with-machine-learning-and-ai/learn/v4/content)
