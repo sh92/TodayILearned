@@ -145,6 +145,7 @@
   * Rendering time in web
 #### Scalable Recommand System
 
+* Spark
 * AWS
   * [Generating Recommendations at Amazon Scale with Apache Spark and Amazon DSSTNE](https://aws.amazon.com/ko/blogs/big-data/generating-recommendations-at-amazon-scale-with-apache-spark-and-amazon-dsstne/)
   * build -> train -> deploy

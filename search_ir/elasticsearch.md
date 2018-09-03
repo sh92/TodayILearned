@@ -1,5 +1,19 @@
 # ElasticSearch
 
+## Install ElasticSearch 6
+sudo apt-get install default-jdk  
+wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -  
+sudo apt-get install apt-transport-https  
+echo "deb https://artifacts.elastic.co/packages/6.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-6.x.list  
+sudo apt-get update && sudo apt-get install elasticsearch 
+  
+sudo vi /etc/elasticsearch/elasticsearch.yml  
+change network.host 0.0.0.0
+  
+sudo /bin/systemctl daemon-reload  
+sudo /bin/systemctl enable elasticsearch  
+sudo /bin/systemctl start elasticsearch  
+
 ## Intro
 * The schema for document
   * index
@@ -25,13 +39,28 @@
 * Curl
   * Curl setting
     * $HOME/bin/curl
-	  * !bin/bash
+	  * !/bin/bash
+	    * /usr/bin/curl -H "Content-Type: application/json" "$@"
 	  * chmod a+x curl
 	  * logout -> login
   * Insult
     * curl -XPUT HOST:PORT?PATH -d '{json foramt}'
+	  ```{create mapping}
+	  curl -XPUT HOST:PORT/movies -d '
+	  {
+	  	"mappings":{
+			"movie":{
+				"properties":{
+					"year":{"type":"date"}
+				}
+			}
+		}
+	  }'
+	  ```
+	* curl -XPUT HOST:PORT/\_bulk --data-binary @filename.json
   * Select
     * curl -XGET HOST:PORT/Path/\_search?pretty
+	* curl -XGET HOST:port/\_cat/indices
   * Update
     * curl -XPOST HOST:PORT/Path/\_update -d '{json}'
   * Delete
@@ -234,5 +263,151 @@
 		}
 	}'
 	```	
+## Importing Data into your index 
+1. stand-alone scripts via REST API
+2. logstash and beats can stream data from logs, s3, databases
+3. AWS systems can stream in data via lambda or kinesis firehose
+4. kafka, spark and more have Elasticsearch integration add-ons
+
+1. Script
+  * java - elastic.co
+  * python - elasticsearch package
+  * scala - Many ways
+  * perl - elasticsearch.pm
+2. Loastash 
+  * Usage
+    1. files, beats, s3, kafka ->
+    2. logstash ->
+    3. elastic search, aws, hadoop, mongodb
+  * parses, tranforms and filters data
+  * It can anonymize personer data 
+  * It can do geo-location lookups
+  * Various Input and Output
+  * sudo vi /etc/losgstash/conf.d/{filename}.conf
+    * [Logstash Tutorial: How to Get Started](https://logz.io/blog/logstash-tutorial/)
+    * [example](https://gist.github.com/cgswong/95c86e0b16e2c6fb67210)
+  * Running logstash
+    * cd /usr/share/logstash/
+	* sudo bin/logstash -f /etc/logstash/conf.d/logstash.conf
+* [Logstash basic example](https://m.blog.naver.com/PostView.nhn?blogId=kbh3983&logNo=221063092376&proxyReferer=https%3A%2F%2Fwww.google.co.kr%2F)
+```{logstash config file}
+input {
+	file {
+		path => "$HOME/{logfile}"
+		start_posistion => "beginning"
+		ignore_older => 0
+	}
+}
+filter {
+        grok {
+                match => { "message" => "%{COMBINEDAPACHELOG}"}
+        }
+        date {
+                match => [ "timestamp", "dd/MMM/yyyy:HH:mm:ss Z" ]
+        }
+}
+
+output {
+        elasticsearch {
+                hosts => [ "127.0.0.1:9200"]
+        }
+        stdout {
+                codec => rubydebug
+        }
+}
+
+```
+
+3. MySQL
+```{mysql}
+sudo apt-get install mysql-server
+mysql -u root -p
+CREATAE DABASE movielens{TABLENAME}
+CREATE TABLE movielens.movies {
+movieID INT PRIMARY KEY NOT NULL,
+title TEXT,
+releaseDate DATE
+};
+LOAD DATA LOCAL INFILE 'ml-10k/u.item' INTO TABLE movielens.movies FIELDS TERMINATED BY'|'
+(movieID, title, @var3)
+set releaseDate = STR_TO_DATE(@var3, '%d-%M-%Y')
+sudo bin/logstash -f /etc/logstash/conf.d/mysql.conf
+```
+```{mysql file}
+input {
+        jdbc {
+                jdbc_connection_string => "jdbc:mysql://127.0.0.1:3306/movielens"
+                jdbc_user => "root"
+                jdbc_password => "123"
+                jdbc_driver_library => "/home/elastic/mysql-connector-java-5.1.42/mysql-connector-java-5.1.42-bin.jar"
+                jdbc_driver_class => "com.mysql.jdbc.Driver"
+                statement => "SELECT * FROM movies"
+        }
+}
+
+output {
+        stdout { codec => json_lines }
+        elasticsearch {
+                "hosts" => "127.0.0.1:9200"
+                "index" => "movielens-sql"
+                "document_type" => "data"
+        }
+}
+```
+```
+curl -XGET 'localhost:9200/movielens-sql/_search?q=title:Star&pretty'
+```
+4. S3
+5. Kafka
+  * sudo apt-get install zookeeperd
+  * wget {kafka download}
+  * tar -zxvf {file}
+  * cd {file}
+  * terminal1 - start kafka : sudo bin/kafka-server-start.sh config/server.properties
+  * terminal2 : sudo bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic kafka-log
+  * sudo vi /etc/logstash/conf.d/logstash.conf
+    ```{kafka}
+	input {
+		kafka {
+			bootstrap_servers => "localhost:9092"
+			topics => ["kafka-logs"]
+		}
+	}
+	```
+  * cd /usr/share/logstash
+  * sudo bin/logstash -f /etc/logstash/conf.d/logstash.conf
+  * terminal3 : sudo bin/kafka-console-producer.sh --broker-list localhost:9092 --topic kafka-logs < ../access\_log
+6. Spark
+```{spark}
+wget http://mirror.apache-kr.org/spark/spark-2.3.1/spark-2.3.1-bin-hadoop2.7.tgz
+get data file
+wget {spark download}
+curl -XGET localhost:9200  -> find elasticsearch version
+maven repository -> search keyword 'org.elsasticsearch' => spark 2.x => find a proper version with elasticsearch
+./spark-2.3.1-bin-hadoop2.7/bin/spark-shell --packages org.elasticsearch:elasticsearch-spark-20_2.11:6.4.0
+./spark-2.3.1-bin-hadoop2.7/bin/spark-shell --packages org.elasticsearch:elasticsearch-spark-{spark-elsatic version}:{elasticsearch version}
+
+spark shell
+import org.elasticsearch.spark.sql._
+case class Rating(uerID:Int, movieID:Int, rating:Float, timestamp:Int)
+def mapper(line:String): Rating= {
+	val fields = line.split(',')
+	val rating:Rating = Rating(fields(0).toInt, fields(1).toInt, fields(2).toFloat, fields(3).toInt)
+	return rating 
+ }
+import spark.implicits._
+val lines = spark.sparkContext.textFile("ml-latest-small/ratings.csv")
+val header = lines.first()
+var data = lines.filter(row => row!=header)
+val ratings  = data.map(mapper).toDF()
+ratings.saveToEs("spark/ratings")
+:quit
+curl -XGET 127.0.0.1:9200/spark/_search?pretty
+``` 
+7. Flink
+
+## Recomended Site
+* http://www.elastic.com/learn
+
 ## Reference
 [Elastic Search 6 and Elastic Stack - In Depth and Hands On!](https://www.udemy.com/elasticsearch-6-and-elastic-stack-in-depth-and-hands-on/learn/v4/content)
