@@ -406,6 +406,328 @@ curl -XGET 127.0.0.1:9200/spark/_search?pretty
 ``` 
 7. Flink
 
+# Aggregation
+* metric
+  * average, stats, min/max, percentile etc
+* buckets
+  * histogram, ranges, distance, significant, terms etc
+* pipellines
+  * moving average, average bucket, cumulative eum, etc
+* matrix
+  * matrix statsA
+
+* bucket by rating value
+```{bucket by rating value}
+curl -XGET '127.0.0.1:9200/ratings/rating/_search?size=0&pretty' -d '
+{
+	"aggs": {
+		"ratings": {
+					"terms": {
+						"field": "rating"
+					}
+			}
+	}
+}'
+```
+* count only 5-star ratings
+```{count 5-star}
+curl -XGET '127.0.0.1:9200/ratings/rating/_search?size=0&pretty' -d '
+{
+	"query":{
+		"match":{
+			"rating":5.0
+		}
+	},
+	"aggs":{
+		"ratings":{
+				"terms":{
+						"field":"rating"
+				}
+		}
+	}
+}'
+```
+* average rating for Star Wars
+```{average rating}
+curl -XGET '127.0.0.1:9200/ratings/rating/_search?size=0&pretty' -d '
+{
+	"query":{
+		"match_phrase":{
+			"title":"Star Wars"
+		}
+	},
+	"aggs":{
+		"avg_rating":{
+			"avg":{
+				"field":"rating"
+			}
+		}
+	}
+}'
+```
+
+* 1.0 rating intervals histogram
+```{histogram}
+curl -XGET '127.0.0.1:9200/ratings/rating/_search?size=0&pretty' -d '
+{
+	"aggs": {
+		"whole_ratings":{
+			"histogram":{
+				"field": "rating",
+				"interval": 1.0
+			}
+		}
+	}
+}'
+```
+* count up movies from each decade
+```{count up}
+curl -XGET '127.0.0.1:9200/movies/movie/_search?size=0&pretty' -d '
+{
+	"aggs":{
+		"release":{
+			"histogram":{
+				"field":"year",
+				"interval":10
+			}
+		}
+	}
+}'
+```
+* break down website hits by hour
+```{hits}
+curl -XGET '127.0.0.1:9200/logstash-2017.04.30/_search?size=0&pretty' -d '
+{
+	"aggs":{
+		"timestamp":{
+			"date_histogram":{
+				"field": "@timestamp",
+				"interval": "hour"
+			}
+		}
+	}
+}'
+```
+* when does google scrap me?
+```{when google}
+curl -XGET '127.0.0.1:9200/logstash-2017.04.30/_search?size=0&pretty' -d '
+{
+	"query":{
+		"match":{
+			"agent":"Googlebot"
+		}
+	},
+    "aggs":{
+        "timestamp":{
+            "date_histogram":{
+                "field": "@timestamp",
+                "interval": "hour"
+            }
+        }
+    }
+}'
+```
+
+* when did my site go down on 2017.04.30
+```{when go down}
+curl -XGET '127.0.0.1:9200/logstash-2017.04.30/_search?size=0&pretty' -d '
+{
+    "query":{
+        "match":{
+            "response": "500"
+        }
+    },
+    "aggs":{
+        "timestamp":{
+            "date_histogram":{
+                "field": "@timestamp",
+                "interval": "minute"
+            }
+        }
+    }
+}'
+```
+* nested aggregation
+```{nested}
+curl -XPUT '127.0.0.1:9200/ratings/_mapping/rating?pretty' -d '
+{
+	"properties": {
+		"title": {
+			"type":	"text",
+			"fielddata": true
+		}
+	}
+}'
+curl -XGET '127.0.0.1:9200/ratings/rating/_search?size=0&pretty' -d '
+{
+	"query":{
+		"match_phrase":{
+			"title": "Star Wars"
+		}
+	},
+	"aggs":{
+		"titles":{
+			"terms":{
+				"field":"title"
+			},
+			"aggs":{
+				"avg_rating":{
+					"avg":{
+						"field":"rating"
+					}
+				}
+			}
+		}
+	}
+}'
+```
+* reindex
+```{reindex}
+curl -XDELETE 127.0.0.1:9200/ratings
+curl -XPUT 127.0.0.1:9200/ratings -d '
+{
+	"mappings":	{
+		"rating": {
+			"properties": 	{
+				"title": {
+					"type": "text",
+					"fielddata": true,
+					"fields": {
+						"raw":	{
+							"type":	"keyword"
+						}
+					}
+				}	
+			}
+		}
+	}
+}'
+python3 IndexRatings.py
+curl -XGET 127.0.0.1:9200/ratings/_mapping?prettyA
+curl -XGET '127.0.0.1:9200/ratings/rating/_search?size=0&pretty' -d '
+{
+	"query":{
+		"match_phrase": {"title": "Star Wars"} 
+	},
+	"aggs": {
+		"titles":{
+			"terms":{
+				"field": "title.raw"
+			},
+			"aggs":{
+				"avg_rating":{
+					"avg":{"field":"rating"}
+				}
+			}
+		}
+	}
+}'
+```
+
+## Kibana
+
+* install
+```{install
+sudo apt-get install kibana
+sudo vi /etc/kibana/kibana.yml
+change server.host 0.0.0.0
+sudo /bin/systemctl daemon-reload
+sudo /bin/systemctl enable kibana
+sudo /bin/systemctl start kibana
+kibana default port 5601
+```
+* get the shakespeare data in [this site](https://www.elastic.co/guide/en/kibana/3.0/import-some-data.html)
+* create index and analyze
+## ELK Stack
+logs -> filebeat -> logstash -> elasticsearch -> kibana
+ELK Stack : Elasticsearch, Logstash, Kibana
+
+* filebeate and logstash
+  * low overload in pipeline
+  * flexibility and scalability
+
+* filebeat
+```{filebeat install}
+sudo apt-get update && apt-get install filebeat
+cd /usr/share/elasticsearch
+sudo bin/elasticsearch-plugin install ingest-geoip
+sudo bin/elasticsearch-plugin install ingest-user-agent
+sudo /bin/systemctl stop elasticsearch
+sudo /bin/systemctl start elasticsearch
+cd /usr/share/filebeat/bin
+sudo filebeat setup --dashboards
+sudo cd /etc/filebeat/modules.d/
+sudo mv apache2.yml.disabled apache2.yml
+sudo vi apache2.yml
+change access and error log paths to 
+["$HOME/logs/access*"]
+["$HOME/logs/error*"]
+
+touch $HOME/logs
+cd 
+wget - download filebeat
+sudo /bin/systemctl start filebeat
+```
+
+## Elastic Operation
+* choosing the number of shards
+write - primary -> secondary
+read - primary or any replica
+* it is not possible to add more shards later without re-indexing
+* But, replica shard can be added without reindexing
+* consider scaling out in phases, so you have time to re-index before you hit the next phase
+
+* PUT /new\_index
+{
+	"settings": {
+		"number_of_shards": 10,
+		"number_of_rplicas":1
+	}
+}
+
+* multiple indices to hold new data
+* search both indices
+* use index aliases to make this easy to do
+
+* multiple indices as a scaling strategy
+  * with time-base data, you can have one index per time frame
+  * current data
+  * use index aliases
+
+* alias
+```{alias rotation example}
+POST /_aliases
+{
+	"actions": [
+		{"add":	{"alias": "log_current", "index": "logs_2017_06"}},
+		{"remove": {"alias: "log_current", "index": "logs_2017_05"}}
+		{"add": {"alias": "log_last_3_months, "index": log2017_06"}}
+		{"remove": {"alias: "log_last_3_months", "index": "logs_2017_03"}}
+	]
+}
+
+DELET /log_2017_03
+```
+* Hardware
+  * RAM is likely your bottleneck
+    * 64GB per machine is the best choice in 64GB OS
+  * fast disks are better
+  * RAIT0 - if your cluster is already redundant
+  * cpu not that importante
+  * need a fast network
+  * don't use NAS
+  * use medium to large considerations: not too big, small
+
+* heap size
+  * default heap size is only 1GB
+  * half or less of your physical memory should be allocated to elasticsearch
+    * the outher half can be used by lucene for caching
+```
+export ES_HEAP_SIZE=10g
+or
+ES_JAVA_OPTS="-Xms10g -Xms10g" ./bin/elasticsearch
+```
+
 ## Recomended Site
 * http://www.elastic.com/learn
 
