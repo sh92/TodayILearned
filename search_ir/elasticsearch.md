@@ -358,6 +358,15 @@ output {
 curl -XGET 'localhost:9200/movielens-sql/_search?q=title:Star&pretty'
 ```
 4. S3
+```{s3}
+input {
+	s3 {
+		bucket => ""
+		access_key_id => ""
+		secret_access_key => ""
+	}
+}
+```
 5. Kafka
   * sudo apt-get install zookeeperd
   * wget {kafka download}
@@ -706,13 +715,12 @@ POST /_aliases
 	]
 }
 
-DELET /log_2017_03
 ```
 * Hardware
   * RAM is likely your bottleneck
     * 64GB per machine is the best choice in 64GB OS
   * fast disks are better
-  * RAIT0 - if your cluster is already redundant
+  * RAID0 - if your cluster is already redundant
   * cpu not that importante
   * need a fast network
   * don't use NAS
@@ -727,6 +735,135 @@ export ES_HEAP_SIZE=10g
 or
 ES_JAVA_OPTS="-Xms10g -Xms10g" ./bin/elasticsearch
 ```
+* x-pack
+  * elastic extension
+  * security, monitoring, alerting, reporting, graph and ml
+  * install
+  ```{xpack install}
+  cd /usr/share/elasticsearch
+  sudo bin/elasticsearch-plugin install x-pack
+
+  sudo vi /etc/elasticsearch/elasticsearch.yml
+  -> Add
+  xpack.security.enabled:false
+
+  sudo /bin/systemctl stop elasticsearch
+  sudo /bin/systemctl start elasticsearch
+  cd /usr/share/kibana
+  sudo -u kibana bin/kibana-plugin install x-pack
+  sudo /bin/systemctl stop kibana
+  sudo /bin/systemctl start kibana
+  ```
+* failover in action
+```{sinario}
+if original is stopped, then automatically exapands across the new node
+sudo vi /etc/elasticsearch/elasticsearch.yml
+Add
+  node.name-1
+  node.max_local_storage_nodes: 2
+cd /etc
+sudo  cp -rp elasticsearch/ elasticsearch-node2
+change
+  node.name-2
+  http.port: 9201
+
+cd /var/log
+sudo mkdir elasticsearch-node2
+sudo chown elasticsearch elasticsearch-node2
+sudo chgrp elasticsearch elasticsearch-node2
+cd /usr/lib/systemd/system
+
+sudo cp elasticsearch.service elasticsearch-node2.service
+sudo vi elasticsearch-node2.service
+change
+  Environment=ES_PATH_CONF=/etc/elasticsearch-node2
+sudo /bin/systemctl daemon-reload
+sudo /bin/systemctl stop elasticsearch
+sudo /bin/systemctl start elasticsearch
+sudo /bin/systemctl start elasticsearch-node2
+curl -XGET 127.0.0.1:9200/_cluster/health?pretty/shakespare/_search?pretty
+
+sudo /bin/systemctl stop elasticsearch
+curl -XGET 127.0.0.1:9200/_cluster/health?pretty
+curl -XGET 127.0.0.1:9201/_cluster/health?pretty
+curl -XGET 127.0.0.1:9201/shakespeare/_search?pretty
+
+```
+
+* snapshot
+  * store backups to NAS, Amazon S3, HDFS, Azure
+  * smart enough to only store changes since last snapshot
+
+```{add it into elastic.yml}
+path.repo:["$HOME/backups"]
+
+PUT _snapshot/backup-repo
+{
+	"type": "fs,
+	"settings": {
+		"location": /home/<user>/backups/backup-repo"
+	}
+}
+
+```
+* using snaphost
+```{snapshot}
+/etc/elasticsearch/elasticsearch.yml
+Add
+  path.repo:["$HOME/backups"]
+cd ~
+mkdir backups
+chmod a+x backups
+PUT _snapshot/backup-repo
+{
+  "type": "fs",
+  "settings": {
+    "location": "$HOME/backups/backup-repo"
+  }
+}
+```
+```{snapshot}
+PUT _snapshot/backup-repo/snapshot-1
+GET _snapshot/backup-repo/snapshot-1
+GET _snapshot/backup-repo/snapshot-1/_status
+POST /_all/_close
+POST _snapshot/backup-repo/snapshot-1/_restore
+```
+
+* Rolling restart
+  * when
+    * OS update, elastic version update, etc
+    * To disable index reallocation while restarting cluster
+  * procedure
+    1. stop indexing new data if possible
+	2. diable shard allocation
+	3. shut down one node
+	4. perform your maintenance on it and restart, column it join the cluster
+	5. re-enable shard allocation
+	6. wait for the cluster to return to green status
+	7. repeat steps 2-6 for all other nodes
+	8. resume indexing new data
+
+```{rollling restart}
+sudo /bin/systemctl start elasticsearch-node2
+curl -XGET 127.0.0.1:9200/_cluster/health?pretty
+curl -XPUT 127.0.0.1:9200/_cluster/settings -d '
+{
+	"transient": {
+		"cluster.routing.allocation.enable":"none"
+	}
+}'
+
+sudo /bin/systemctl stop elasticsearch
+sudo /bin/systemctl start elasticsearch
+curl -XPUT 127.0.0.1:9200/_cluster/settings -d '
+{
+	"transient": { 
+		"cluster.routing.allocation.enable": "all"
+	}
+}'
+```
+
 
 ## Recomended Site
 * http://www.elastic.com/learn
