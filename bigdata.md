@@ -22,6 +22,21 @@
 * [Learning Spark](https://d2.naver.com/news/8818403)
 * [Spark Shuffle](https://swalloow.github.io/spark-shuffling)
 * [rdd](https://www.quora.com/Why-is-RDD-immutable-in-Spark)
+  * resilient 
+    * it make sure that if one goes down it can recover.
+  * distributed
+  * dataset
+  * transforming rdd
+    * map, flatmap
+	* filter, ditinct, sample, union, intersection, subset, catesian
+  * action
+    * collect
+	* count, countByValue
+	* take
+	* top
+	* reduce
+	* etc
+  * lazy evaluation
 * map vs flatmap
   * [map vs flatmap - Korean](https://smlee729.wordpress.com/2016/06/29/spark-map-flatmap-operations/)
   * [map vs flatmap - English](https://data-flair.training/blogs/apache-spark-map-vs-flatmap/)

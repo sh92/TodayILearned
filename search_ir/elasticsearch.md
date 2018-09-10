@@ -141,7 +141,7 @@ sudo /bin/systemctl start elasticsearch
 				"properties": {
 					"title": {
 						"type": "text"
-						fields": {
+						"fields": {
 							"raw": { 
 								"type": "keyword",
 							}
