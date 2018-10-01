@@ -7,7 +7,7 @@
 * [OS](./os.md)
 * [Network](./network.md)
 * [DataBase](./db.md)
-* [Datastructure and Algorithms](./dataStructure_algorithms.md)
+* [Datastructure and Algorithms](./dataStructure_algotithms.md)
 * [Language](./language/README.md)
   * [Java](./language/java.md)
     * Design Pattern
@@ -17,7 +17,9 @@
 * [Web](./web.md)
   * Web design site
 * [Backend](./backend.md)
-* [Bigdata](./bigdata.md)
+* Bigdata
+  * [bigdata](./bigdata/bigdata.md)
+  * [spark](./bigdata/spark.md)
 * [Machine Learning](./ml.md)
 * [Recommender System](./recsys.md)
 * [Search and Information Retrieval](./search_ir/README.md)
