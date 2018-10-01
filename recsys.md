@@ -182,5 +182,7 @@
 
 * [Netflix prize summary](http://blog.echen.me/2011/10/24/winning-the-netflix-prize-a-summary/)
 
+* [추천시스템 기초](https://datascienceschool.net/view-notebook/fcd3550f11ac4537acec8d18136f2066/)
+
 ### Reference
 [Recommender system with Machine Learning](https://www.udemy.com/building-recommender-systems-with-machine-learning-and-ai/learn/v4/content)

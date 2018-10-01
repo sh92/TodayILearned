@@ -1,5 +1,7 @@
 # Machine Learning
 
+* Problem definition -> Variable Extraction -> Cleanzing and Transforming Data -> Analyze -> Evaluation
+
 * [Lecture Site](https://wikidocs.net/book/587)
 * [Andrew ng 강의 정리](https://www.slideshare.net/freepsw/coursera-machine-learning-by-andrew-ng)
 * Logistic Regression
@@ -12,7 +14,9 @@
 * Anomaly Detection
 * Recommender Systems
 * Large Scale Machine Learning
-* Photo OCR
+* Photo OCR 
+* [Random Forest](https://medium.com/@deepvalidation/title-3b0e263605de)
+* [SVM](https://towardsdatascience.com/support-vector-machine-vs-logistic-regression-94cc2975433f)
 
 ### Precision and Recall
 * Precision = TP / \(TP + TN\)

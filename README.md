@@ -7,7 +7,7 @@
 * [OS](./os.md)
 * [Network](./network.md)
 * [DataBase](./db.md)
-* [Datastructure and Algorithms](dataStructure_algorithms.md)
+* [Datastructure and Algorithms](./dataStructure_algorithms.md)
 * [Language](./language/README.md)
   * [Java](./language/java.md)
     * Design Pattern

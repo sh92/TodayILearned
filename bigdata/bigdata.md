@@ -16,36 +16,6 @@
 * [Zookeeper](http://over153cm.tistory.com/category/-----%20Big%20Data%20----/Hadoop)
 * [Shuffling 세부단계](http://develop.sunshiny.co.kr/897)
 
-
-## Spark
-
-* [Learning Spark](https://d2.naver.com/news/8818403)
-* [Spark Shuffle](https://swalloow.github.io/spark-shuffling)
-* [rdd](https://www.quora.com/Why-is-RDD-immutable-in-Spark)
-  * resilient 
-    * it make sure that if one goes down it can recover.
-  * distributed
-  * dataset
-  * transforming rdd
-    * map, flatmap
-	* filter, ditinct, sample, union, intersection, subset, catesian
-  * action
-    * collect
-	* count, countByValue
-	* take
-	* top
-	* reduce
-	* etc
-  * lazy evaluation
-* map vs flatmap
-  * [map vs flatmap - Korean](https://smlee729.wordpress.com/2016/06/29/spark-map-flatmap-operations/)
-  * [map vs flatmap - English](https://data-flair.training/blogs/apache-spark-map-vs-flatmap/)
-* [Spark 개념 한글로 잘 정리된 사이트](http://helloino.tistory.com/20)
-* [Dataframe](http://12bme.tistory.com/307)
-  * [Databricks dataframes](https://docs.databricks.com/spark/latest/dataframes-datasets/introduction-to-dataframes-python.html)
-
-* [RDD partitioning](http://ourcstory.tistory.com/156)
-
 ## FLUME
 * [Flume](http://taewan.kim/post/flume_images/)
 
