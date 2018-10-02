@@ -36,6 +36,7 @@
 * [Spark Lineage — Logical Execution Plan](https://jaceklaskowski.gitbooks.io/mastering-apache-spark/spark-rdd-lineage.html)
   * To See
     * use toDebugString method
+	* /bin/spark-shell --conf spark.logLineage=true
 
 
 * ALS

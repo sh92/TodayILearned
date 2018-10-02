@@ -22,3 +22,7 @@ TODO
 
 ### Tier Architecture
   * [two-tier vs three tier](https://www.tuturself.com/posts/view?menuId=90&postId=465)
+
+### ISSUE
+* [Web Server가 다운됬는가 원인 추적](http://amazingguni.github.io/blog/2016/06/devops-chapter-8-%EC%9B%B9%EC%84%9C%EB%B2%84)
+* [Linux Server 장애 원인파악?](https://medium.com/hbsmith/linux-%EC%84%9C%EB%B2%84-%EC%9E%A5%EC%95%A0%EC%9B%90%EC%9D%B8-%ED%8C%8C%EC%95%85%EC%9D%80-%EC%96%B4%EB%96%BB%EA%B2%8C-7accec423bb5)

@@ -35,12 +35,12 @@
   * cumlative hit rate (cHR)
   * rating hit rate (rHR)
 
-* Offline Mettrics
+* Offline Metrics
   * Coverage : % of \(user, item\) pairs that can be predicted
   * Diversity : \(1-S\), S is average simiarylity between pairs
   * Novelity : popularity rank of items
   * Accuracy : metric - [RMSE, MAE](https://medium.com/human-in-a-machine-world/mae-and-rmse-which-metric-is-better-e60ac3bde13d)
-    * RMSE - netflix prize
+
 
 * Churn : How often recommenadation change?
   * Novelity, Diviersity vs Churn - trade off

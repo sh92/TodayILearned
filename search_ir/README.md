@@ -41,3 +41,16 @@ Document classifiers에 사용되는 알고리즘들
   * knn
   * tf\-idf
   * [naive bayesian](http://bcho.tistory.com/1010)
+
+* Metric
+  * [MAP](https://inspace4u.github.io/dllab/lecture/2017/11/07/Mean_Average_Precision.html)
+  * [NDCG](http://freesearch.pe.kr/archives/1574)
+  * [NDCG vs RMSE](https://datascience.stackexchange.com/questions/369/difference-between-using-rmse-and-ndcg-to-evaluate-recommender-systems)
+    * NDCG is proper way if you use implicit rating data such as user consumed
+	* RMSE is proper way if you use explicit data
+  * [RMSE vs MAE](https://medium.com/human-in-a-machine-world/mae-and-rmse-which-metric-is-better-e60ac3bde13d)
+    * RMSE has tendency to be increasing as test samples increase
+	  * So, it is important to compare the result on the same test size
+	  * RMSE has advantage that it avoid absolute value. So, it could be used other cacluation. 
+* [검색시스템의 평가](https://www.slideshare.net/MinsubYim/evaluation-in-ir-system)
+* [검색시스템의 평가2](https://www.slideshare.net/ghcho80/information-retrieval-evaluation-52412108?qid=cd07b560-b9b9-4c25-b38a-1be91d1810e4&v=&b=&from_search=1)

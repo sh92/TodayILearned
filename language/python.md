@@ -24,6 +24,7 @@
   * [aiohttp를 이용해 서버를 만들어보자](http://meonggae.blogspot.com/2016/11/python-aiohttp.html)
   * [A Web Crawler With asyncio Coroutines](http://www.aosabook.org/en/500L/a-web-crawler-with-asyncio-coroutines.html)
 * [Concurrent.futures](https://soooprmx.com/archives/5669)
+* [동시성과 병렬성](https://www.slideshare.net/deview/2d4python)
 
 
 ## Django
