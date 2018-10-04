@@ -25,6 +25,8 @@
   * [A Web Crawler With asyncio Coroutines](http://www.aosabook.org/en/500L/a-web-crawler-with-asyncio-coroutines.html)
 * [Concurrent.futures](https://soooprmx.com/archives/5669)
 * [동시성과 병렬성](https://www.slideshare.net/deview/2d4python)
+* [Gevent, Celery, libev](https://medium.com/@fiv3star/gevent-celery-%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC-f4e377ae1c08)
+* [Celery란](https://medium.com/sunhyoups-story/celery-b96eb337b9cf)
 
 
 ## Django

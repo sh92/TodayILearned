@@ -7,7 +7,7 @@
   * [Java DataStructure and Algorithms](https://javarevisited.blogspot.com/2013/03/top-15-data-structures-algorithm-interview-questions-answers-java-programming.html)
   * [신입개발자 면접질문](https://hanee24.github.io/2018/05/13/interview-questions/)
   * [신입 자바 개발자](http://cheekee.co.kr/?p=273)
-  * [Core java interview Question and answer](
+  * [Core java interview Question and answer](https://www.journaldev.com/2366/core-java-interview-questions-and-answers)
 * [Python](https://www.careerride.com/python-interview-questions.aspx)
   * [Python관련 질문](http://118k.tistory.com/646)
 * [Scala](https://career.guru99.com/top-25-interview-questions-on-scala/)

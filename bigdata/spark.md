@@ -29,7 +29,7 @@
     * cache() your input datasets before passing the to mllib
 	* If doe not fit in memory try persist(StorageLeve.DISK\ONLY)
 	* In Python, mllib autommatically caches RDD on JAVA side
-	* IN Scala and Java, it depends on the usage of cache for developer
+	* In Scala and Java, it depends on the usage of cache for developer
 
 
 * [RDD partitioning](http://ourcstory.tistory.com/156)
