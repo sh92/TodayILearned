@@ -17,9 +17,10 @@
 * [Web](./web.md)
   * Web design site
 * [Backend](./backend.md)
-* Bigdata
-  * [bigdata](./bigdata/bigdata.md)
+* [Bigdata](./bigdata/README.md)
+  * [hadoop](./bigdata/hadoop.md)
   * [spark](./bigdata/spark.md)
+  * [kafka](./bigdata/kafka.md)
 * [Machine Learning](./ml.md)
 * [Recommender System](./recsys.md)
 * [Search and Information Retrieval](./search_ir/README.md)

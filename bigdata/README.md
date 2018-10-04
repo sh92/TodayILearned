@@ -2,6 +2,11 @@
 
 * [OLTP vs OLAP](https://m.blog.naver.com/PostView.nhn?blogId=llggdd&logNo=130185455344&proxyReferer=https%3A%2F%2Fwww.google.co.kr%2F)
 * [BI/DW, ETL, MSBI](https://www.linkedin.com/pulse/what-bi-dw-etl-msbi-ajay-kumar/)
+## Hadoop
+[hadoop](./hadoop.md)
+
+## Spark
+[spark](./spark.md)
 
 ## FLUME
 * [Flume](http://taewan.kim/post/flume_images/)
