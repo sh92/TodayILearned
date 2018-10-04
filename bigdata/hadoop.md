@@ -1,7 +1,7 @@
-#Hdoop and Mapreduce
+# Hadoop and Mapreduce
 
+## Recommended Site
 * [Mapreduce paper](https://ai.google/research/pubs/pub62)
-
 * [Hadoop 설명](https://www.joinc.co.kr/w/man/12/aws/bigdata/Fundamentals3)
 * [Hadoop v1 vs Hadoop v2](http://ecycle.tistory.com/6)
 * Map + reduce
@@ -12,6 +12,7 @@
 * [Shuffling 세부단계](http://develop.sunshiny.co.kr/897)
 * [Docker 컨테이너 기반의 하둡 클러스터 실행](http://blog.naver.com/PostView.nhn?blogId=alice_k106&logNo=220408254436)
 
+## Hadoop
 * Hadoop vs RDBMS
 
 * Mapreduce
@@ -58,9 +59,6 @@
   * by an administartor failover is manually initiated
 * In case of ungraceful
   * It is impossible to be sure that the failed namenode has stopped running
-
-### CLI
-* hadoop fs -copyFromLocal [LOCALFILE] [FILE_IN_HDFS]
 
 ### HDFS
 * Direct access
@@ -115,7 +113,7 @@ Which datanode store replicas on Namenode?
 if incompatible versions of HDFS then
 * hadoop distcp webhdfs://namenode1:50070/foo webhdfs://namenode2:50070/foo
 
-#YARN
+## YARN
 * it proviedes APIs for requesting and working with cluster resources
 
 1. App client -> \(submit Yarn APP\) RM 
