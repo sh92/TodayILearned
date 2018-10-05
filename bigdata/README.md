@@ -8,6 +8,9 @@
 ## Spark
 [spark](./spark.md)
 
+## Kafka
+[kafka](./kafka.md)
+
 ## FLUME
 * [Flume](http://taewan.kim/post/flume_images/)
 

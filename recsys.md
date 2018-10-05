@@ -182,7 +182,7 @@
 
 * [Netflix prize summary](http://blog.echen.me/2011/10/24/winning-the-netflix-prize-a-summary/)
 
-### Reading Site
+### Recommended Site to read
 * [추천시스템 기초](https://datascienceschool.net/view-notebook/fcd3550f11ac4537acec8d18136f2066/)
 * [빅데이터와 자연어처리를 이용한 11번가의 상품추천](http://readme.skplanet.com/wp-content/uploads/%ED%8A%B8%EB%9E%992-6.%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%99%80-%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC-%EA%B8%B0%EC%88%A0%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-11%EB%B2%88%EA%B0%80-%EC%83%81%ED%92%88-%EC%B6%94%EC%B2%9C.pdf)
 

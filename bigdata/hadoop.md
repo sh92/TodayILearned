@@ -7,12 +7,19 @@
 * Map + reduce
 * [Shuffling](http://develop.sunshiny.co.kr/897)
 * [Combiner](https://data-flair.training/blogs/hadoop-combiner-tutorial/)
+  * Basically it occurse when spills is generated or merge btw spills
+  * job.setCombinerClass\(Reducer.class\)
+  * Can
+    * Sum, MAX, MIN
+  * Can't
+    * Average
 * [Partitioner](https://data-flair.training/blogs/hadoop-partitioner-tutorial/)
 * [Zookeeper](http://over153cm.tistory.com/category/-----%20Big%20Data%20----/Hadoop)
 * [Shuffling 세부단계](http://develop.sunshiny.co.kr/897)
 * [Docker 컨테이너 기반의 하둡 클러스터 실행](http://blog.naver.com/PostView.nhn?blogId=alice_k106&logNo=220408254436)
 
 ## Hadoop
+
 * Hadoop vs RDBMS
 
 * Mapreduce
@@ -207,13 +214,77 @@ hadoop fs -checsum
   * there is the difference btw Text and String
 * the length of a String is the number of char code
 
+
 ## Anatomy of a Mapreduce job run
 * five independent entities
   * the client submits the MR jobs
-  * YARN resource manager, which cordinate the allocation of computer resources on the cluster
+  * YARN resource manager, which coordinate the allocation of computer resources on the cluster
   * The YARN node managers, which launch and moniter the compute containers on machinees in the cluster
   * MR app master, which coordinating the tasks running the MR job. The application master and the MR tasks run in containers that are scheduled by the resource manager and managed by the node managers
   * DFS, shareing job files btw the other entities
+
+## Mapper class methods
+* setup
+  * allocate necesarry resouce
+  * pre task
+* cleanup
+  * deallocate the resource
+  * final task
+* run
+
+## Type of Mapreduce
+* Writable Interface
+  * write method invokes when object is serialized
+  * readFields method invokes when object is deserialized
+* WritableComparable
+  * Comparable
+    * compareTo
+
+* Basic Type
+  * Text
+  * IntWritable
+  * LongWritable
+  * FloatWritable
+  * DoubleWritable
+  * ArrayWritable
+  * NUllWritable
+
+## The role of Input Format
+* job.setInputFormatClass([Input Format])
+* TextInputFormat - Key: Logwritable, Value: Text - extends FileInputFormat
+* KeyValueInputFormat - Key:Text tab Value:Text - extends FileInputFormat
+* Sequence IntputFormat Key:Any Value:Any - SequenceFileInputFormat.addINputPath(s) - extends FileInputFormat
+* MultipleInputs - To handle different file format
+
+## The component to decide the number of Map Task
+* the number of file
+* the size of fIle
+* ther file format
+
+## Input Format
+TextInputFormat  
+* one path
+  * FileInputFormat.addInputPath(job, new Path(args[0]))  
+* serveral path
+  * FileInputFormat.addInputPaths(job, new Path(args[0]))  
+* Key Type is Longwritable
+* Value Type is Text
+* Identity mapper
+  * to output the record given input
+  * job.setMapperClass(Mapper.class)
+
+## Partitioner
+* To desicde which reduce task to take a records 
+* setPartitionerClass
+
+## Map output buffering
+* The size of memory buffer mapred-site.xml -> io.sort.mb (default 100mb)
+* \(Partition number, key/value) 
+* io.sort.record.percent (default location 5% and data 95%)
+* io.sort.spill.percent (default 80%) - the file to be written the content of buffer in disk
+* the maximum number of spill => ios.sort.facotr
+* When map output is finished, spills and residence of the buffer is merged and sorted with partition number
+
 ## Shuffle
 * Shuffle
   * the input to every reducer is sorted by key
@@ -239,10 +310,62 @@ hadoop fs -checsum
   * if there are 50 map output and merge factor was 10 default, controlled by the mapreduce.task.io.sort.factor.property
   * Each round merge 10 files to 1, so the end there would be 5 intermediate files
 
+
+## Sorting
+* To know which recordds has same key and to group the records that has same key
+* io.sort.factor - As it merge spill in map task , to keep a number of file under a certain number
+* SortComparator and GroupingComparator
+  * Implement comparareTo method
+
+## Reduce
+The output is sotred in HDFS. So, it should be set the output format
+```{main example}
+job.setOuputKeyClass(Text.class);  
+job.setOutputValueClass(Longwritable.class);  
+...  
+job.setOUtputFormatCalss(TextOutputFormat.class);  
+...  
+FileOutputFormat.setOutputPath(job, new Path(args[1]));  
+```
+* Identity Reducer
+  * output the records when input comes itself
+  * If you don't need to aggregate the record that has same key
+  * job.setReducerClass(Reducer.class)
+
+## OutputFormat
+* TextOutputFormat
+  * TextOutputFormat.setCompressOutput(job,true)
+  * TextOutputFormat.setOutputCompressiorClass(job, GzipCodec.class)
+  * In mapred-site.xml <- you can apply to compress map output temporary file
+* SequenceFileOutputFormat
+  * stOutputCompressionType
+    * BLOCK : recored is compressed in block
+	* NONE
+	* RECORD : it is compress per record
+* MapFileOutputFormat
+  *
+* MultipleOutputs
+  * setup
+    * multipleOutputs =  new Multipleoutputs(contenxt)
+  * cleanup
+    * multipleOutputs.close()
+  * In reduce
+    * multipleOutputs.write(...)
+
+## Counter
+It is mechanism to count something in map or reduce
+* context.getCounter("Error","No numeric ID").incremement(1);
+* job.getConfiguration().setInt("mapreduce.job.countries.limits", 200);
+
+## Sequence
+input Split -> \[Map task: Map -> Partitioner -> Circular memory buffer -> spills -> Combiner\(=Mini Reducer, Local Reducer\)->  merged map ] -> Shuffling/Sorting ->\(HTTP-CRC\) Reduce -> HDFS
+
 ### Mapreduce Type
 * map : (k1, v1) -> list(k2, v2)
 * combiner : (k2, list(v2)) -> list(k2,v2)
 * reduce : (k2, list(v2)) -> list(k3, v3)
 
 ## Recommended Books and Reference
-Hadoop definite Guide
+Hadoop definite Guide  
+직접 해보는 하둡 프로그래밍
+
