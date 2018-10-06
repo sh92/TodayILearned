@@ -119,6 +119,8 @@ Which datanode store replicas on Namenode?
 
 if incompatible versions of HDFS then
 * hadoop distcp webhdfs://namenode1:50070/foo webhdfs://namenode2:50070/foo
+* if you want to know more commands 
+  * [hadoop commandline guide](https://hadoop.apache.org/docs/r1.0.4/commands_manual.html)
 
 ## YARN
 * it proviedes APIs for requesting and working with cluster resources
@@ -273,6 +275,19 @@ TextInputFormat
   * to output the record given input
   * job.setMapperClass(Mapper.class)
 
+* MultipleInputs.addInputPath
+if you use multitpleInputs.addInputPath(), you don't need to use FileInputFormat's addInputPath  
+```{MultipleInput}
+...
+MultipleInputs.addInputPath(pass, new Path(titledocId), KeyValueInputFormat.class, MyMapper1.class)
+MultipleInputs.addInputPath(pass, new Path(docIdFreq), KeyValueInputFormat.class, MyMapper2.class)
+...
+pass.setOutputFormatClass(TextOutputFormat.class)
+...
+FileOutputFormat.setOutputPath(pass, new Path(outputDir))
+...
+```
+
 ## Partitioner
 * To desicde which reduce task to take a records 
 * setPartitionerClass
@@ -338,12 +353,11 @@ FileOutputFormat.setOutputPath(job, new Path(args[1]));
   * TextOutputFormat.setOutputCompressiorClass(job, GzipCodec.class)
   * In mapred-site.xml <- you can apply to compress map output temporary file
 * SequenceFileOutputFormat
-  * stOutputCompressionType
+  * setOutputCompressionType
     * BLOCK : recored is compressed in block
 	* NONE
 	* RECORD : it is compress per record
 * MapFileOutputFormat
-  *
 * MultipleOutputs
   * setup
     * multipleOutputs =  new Multipleoutputs(contenxt)
@@ -416,6 +430,37 @@ if(toekenizer.countTOkens() > number) {
    }
 }
 
+```
+* StringSort
+```{mapreduce stringSort program}
+public static void main(String[] args) throws Exception {
+   Configuration conf = new Configuration();
+   Job job = new Job(conf, "StringSort");
+   job.setJarByClass(StringSort.class)
+   ...
+
+   SequenceFileOutputFormat.setOutputPath(job, new Path(args[1]));
+   SequenceFileOutputFormat.setOutputCompressionType(job, SequenceFIle.CompressionType.BLOCK);
+   job.waitForCopmletion(true);
+}
+```
+
+## Join to use Distributed Cache
+* Distributed Cache?
+Mechanishm to copy a small only read file from task's job to directory.  
+The maximum of size of file is 10GB  
+The meaningful size is less than 100MB  
+
+* main
+```{Distributed Cache}
+import org.apache.hadoop.filecache.DistirbutedCache;
+DistributedCache.addCacheFile(new URI(docIDFreq, conf))
+
+```
+* MyMapper setup
+```{setup}
+private Path[] localFiles;  
+localFiles = Distributed.getLocalCacheFiles(context.getConfiguration());  
 ```
 
 ## Sequence

@@ -217,6 +217,8 @@ UniProgramming은 하나의 프로그램을 사용하고MultiProgramming은 여�
   * Deadlock 
     * 한개 또는 여러 프로세스들은 진행할 수 없다. 왜냐하면 각각은 한개가 어떤것을 하도록 기다리기 때문이다.
 
+* [Deadlock vs LiveLock](http://zepeh.tistory.com/196)
+
 * concurrent vs parallel programming
 [More](https://www.slideshare.net/TausunAkhtary/concurrent-parallel-programming)
 [More2](https://takuti.me/note/parallel-vs-concurrent/)

@@ -15,11 +15,13 @@
   * [GIL](https://medium.com/@mjhans83/python-gil-f940eac0bef9)
   * [More](https://blog.seulgi.kim/2015/01/global-interpreter-lock.html)
   * [More2](https://code.i-harness.com/ko/q/13c02e)
-  * [More3](https://medium.com/@mjhans83/python-gil-f940eac0bef9)
+  * [GIL and Reference Counting](https://blog.hanlee.io/2018/under-the-c-2/)
+
 * [Gevent](http://software-engineer.gatsbylee.com/gevent/)
   * [Gevent](http://khanrc.tistory.com/entry/%EC%A0%9C%EC%95%BD%EC%9D%84-%EB%84%98%EC%96%B4-Gevent)
 * Asycio and aiohttp
-  * [asyncIO란](https://tech.ssut.me/2015/07/09/python-3-play-with-asyncio/)
+  * [asyncIO란](https://tech.ssut.me/python-3-play-with-asyncio/)
+    * [async python](https://mingrammer.com/translation-asynchronous-python/)
   * [Making 1 million requests with python-aiohttp](https://pawelmhm.github.io/asyncio/python/aiohttp/2016/04/22/asyncio-aiohttp.html)
   * [aiohttp를 이용해 서버를 만들어보자](http://meonggae.blogspot.com/2016/11/python-aiohttp.html)
   * [A Web Crawler With asyncio Coroutines](http://www.aosabook.org/en/500L/a-web-crawler-with-asyncio-coroutines.html)
