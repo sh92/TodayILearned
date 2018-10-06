@@ -357,6 +357,67 @@ It is mechanism to count something in map or reduce
 * context.getCounter("Error","No numeric ID").incremement(1);
 * job.getConfiguration().setInt("mapreduce.job.countries.limits", 200);
 
+## MRUnit
+```{set the driver}
+MapReduceDriver < LongWritable, Text, Text, LongWritable, Text, LongWritable> mapReduceDriver;  
+MapDriver < LongWritable, Text, Text, LongWritable > mapDriver;
+Reducer < Text, LongWritable, Text , LongWritable > reduceDriver;
+
+@Before
+public void setUp() {
+   WordCount.MyMapper mapper = new WordCount.MyMapper();
+   WordCount.MyReducer reducer - new WordCount.MyReducer();
+   mapDriver = new MapDriver<LongWritable, Text, Text, LongWritable>();
+   mapDriver.setMapper(mappe);
+   reduceDriver =  new ReduceDriver<Text, LongWritable, Text, LongWritable>();
+   reduceDriver.setReducer(reducer);
+   mapReduceDriver = new MapReduceDriver<LongWriatble, Text, Text, LongWritable, Text, LongWritable>();
+   mapReduceDriver.setMapper(mapper);
+   mapReduceDriver.setReducer(reducer);
+}
+
+@Test
+public void testMapper() {
+   mapDriver.withInput(new LongWritable(1), new Text("cat cat dog"));
+   mapDriver.withOutput(new Text("cat"), new LongWritable(1));
+   mapDriver.withOutput(new Text("cat"), new LongWriatble(1));
+   mapDriver.withOutput(new Text("dog"), new LongWriatble(1));
+   mapDriver.runtText();
+}
+
+@Test
+public void testReducer() { 
+   List<LongWritable> values = new ArrayList<LongWritable>();
+   values.add(new LongWritable(1));
+   values.add(new LongWritable(1));
+   reduceDriver.witInput(new Text("cat"), values);
+   reduceDriver.witOutput(new Text("cat"), new LongWritable(2));
+   reduceDriver.runTest();
+}
+
+@Test
+public void  testMapReduce() {
+   mapReduceDriver.withInput(new LongWritable(1), new Text("cat cat dog"));
+   mapReduceDriver.addOutput(new Text("cat"), new LongWritable(2));
+   mapReduceDriver.addOutput(new Text("dog"), new LongWritable(1));
+   mapReduceDriver.runTest();
+}
+
+```
+## ETC
+* tokenizer - bigram, trigram example
+```{tokenizer}
+StringToekenizer tokenizer = new StirngTokenizer(line,  "\t\r\n\f|,~#\"$.'%&=+_^@`~:?<>(){}[];*/");
+if(toekenizer.countTOkens() > number) {
+   String firstToken = tokenizer.netToken().toLowerCase();
+   ...
+   while(tokenizer.hasMOreTokens()) {
+   ...
+   }
+}
+
+```
+
 ## Sequence
 input Split -> \[Map task: Map -> Partitioner -> Circular memory buffer -> spills -> Combiner\(=Mini Reducer, Local Reducer\)->  merged map ] -> Shuffling/Sorting ->\(HTTP-CRC\) Reduce -> HDFS
 
