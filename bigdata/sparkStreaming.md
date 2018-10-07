@@ -29,7 +29,7 @@ val lines = ssc.socketTextStreaem("localhost", 7777)
 val errorLines = lines.filter(_.contain("error"))
 errorLines.print()
 ```
-##Stateless
+## Stateless
 ```{stateless}
 val accessLogDstream = logData.map(line => ApacheAcessLog.parseFromLogLine(line))
 val ipDstream = accessLogDStream.map(entry => (entry.getIpAddress(), 1))
@@ -41,7 +41,7 @@ val ipBytessRequestsCountDStream = ipCountsDStream.join(ipBytesSumDStream)
 
 val outlieerDStream = accessLogsDStream.transform { rdd => extractOutlier(rdd) }
 ```
-##Stateful
+## Stateful
 ```{stateful}
 val accessLogWindow = accessLogsDStream.window(Seconds(30), Seconds(10))
 val windowCounts = accessLogWindow.count()
