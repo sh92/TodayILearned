@@ -9,6 +9,7 @@
 * [컴퓨터의 분류](http://tip.daum.net/question/3700298)
 * [Web developer roadmap](https://github.com/kamranahmedse/developer-roadmap)
 * [정량적 vs 정성적](https://m.blog.naver.com/PostView.nhn?blogId=sori121212&logNo=60193714694&proxyReferer=https%3A%2F%2Fwww.google.co.kr%2F)
+* [Procedure vs Funtion](https://stackoverflow.com/questions/721090/what-is-the-difference-between-a-function-and-a-procedure)
 
 #### Shell and unix command
 * [Mac : oh-my-zsh설치](https://nolboo.kim/blog/2015/08/21/oh-my-zsh/)

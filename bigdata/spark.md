@@ -31,13 +31,59 @@
 	* In Python, mllib autommatically caches RDD on JAVA side
 	* In Scala and Java, it depends on the usage of cache for developer
 
+* Pair RDD
+  * Aggregate
+    * reduceBykey
+    * foldByKey
+    * combineByKey
+  * if it is a value we have seen before while processing that partition, it will instead use the provided function, mergeValue
+  * Wordcount
+    * input.flatMap(x => x.split(" ")).countByValue()
 
+* Pararallelism
+  * sc.parallelize(data).reduceByKey(lambda x,y:x+y)
 * [RDD partitioning](http://ourcstory.tistory.com/156)
+  * [Partitions with Coalesce and Repartition](https://hackernoon.com/managing-spark-partitions-with-coalesce-and-repartition-4050c57ad5c4)
 * [Spark Lineage — Logical Execution Plan](https://jaceklaskowski.gitbooks.io/mastering-apache-spark/spark-rdd-lineage.html)
   * To See
     * use toDebugString method
 	* /bin/spark-shell --conf spark.logLineage=true
 
+* Grouping Data
+  * groubByKey
+     * [K, Iterable[V]]
+  * cogroup
+
+* Joins
+  * right and left outer join
+  * cross join
+  * inner join
+
+* spark 1.0 operations partitioning
+  * cogroup, groupWith, join, leftOuterJoin, rightOUterJoin, groupByKey, reduceBuKey, combinByKey, lookup
+
+* Shared Variable
+  * accumlators
+  * broadcast
+
+* Pipe to External Programs
+  * combine the R
+
+* Memory Management
+  * RDD storage
+  * Shuffle and aggregation buffer
+  * User Code
+
+
+* Loading and Saving Data
+  * JSON
+  * Hive
+  * Parquet
+    * column-oriented storage format
+  * From RDD
+  * JDBC/ODBC
+
+* Spark SQL UDF
 
 * ALS
   * [weitght lamda regulization 이해](https://www.slideshare.net/madvirus/als-ws)
@@ -51,6 +97,7 @@
     * A constant used for computing confidence in implicit ALS - 1.0
   * numUserBlocks, numProductBlock
     * Number of blocks to diide user and product, to contorl parallellism
+
 
 * RDD Graph
   * sc.textFile()
@@ -108,8 +155,12 @@
 * Recommended Site
   * [Mastering Spark](https://jaceklaskowski.gitbooks.io/mastering-apache-spark/spark-overview.html)
   * [Introduction to AmpLab Spark Internals](https://www.youtube.com/watch?v=49Hr5xZyTEA&feature=youtu.be)
+  * [Netflix - Productionizing Spark On Yarn For ETL At Petabyte Scale](https://www.slideshare.net/JenAman/netflix-productionizing-spark-on-yarn-for-etl-at-petabyte-scale)
 * Recommended Book
   * Learning Spark
   * Mastering Spark
   * Advanced analytics with Spark
+* Recommended Video
+  * [RDDs, DataFrames and Datasets in Apache Spark - NE Scala 2016](https://www.youtube.com/watch?v=pZQsDloGB4w)
+  * [Deep Learning and Streaming in Apache Spark](http://engineering.vcnc.co.kr/2017/12/spark-summit-eu-2017/()
 
