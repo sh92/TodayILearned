@@ -475,3 +475,5 @@ input Split -> \[Map task: Map -> Partitioner -> Circular memory buffer -> spill
 Hadoop definite Guide  
 직접 해보는 하둡 프로그래밍
 
+## Recommended site
+[하둡은 스파크와 경쟁관계인가](http://www.zdnet.co.kr/news/news_view.asp?artice_id=20150810151505)

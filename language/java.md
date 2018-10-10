@@ -1,5 +1,6 @@
 # JAVA
 * [Java9의 변화와 특징](https://medium.com/@goinhacker/java-9%EC%9D%98-%EB%B3%80%ED%99%94%EC%99%80-%ED%8A%B9%EC%A7%95-%EB%8C%80%EC%B6%A9-%EC%A0%95%EB%A6%AC-fca77cee88f2)
+* [Java8의 변화](http://tcpschool.com/java/java_intro_java8)
 * [추상클래스 vs interface](http://marobiana.tistory.com/58)
 
 ## OOP
@@ -58,6 +59,7 @@
 객체를 통해 클래스의 정보를 분석해 내는 프로그램 기법
 * [Override vs Overload](http://hyeonstorage.tistory.com/185)
 * [Serialization](http://woowabros.github.io/experience/2017/10/17/java-serialize.html)
+  * [More 자바 직렬화, 그것이 알고싶다. 훑어보기편-우아한형제 기술블로그](http://woowabros.github.io/experience/2017/10/17/java-serialize.html)
 * [volatile](https://nesoy.github.io/articles/2018-06/Java-volatile)
 * [RMI란](http://0yumin.tistory.com/16)
 * [StringBuffer vs StringBuilder](https://itblackbelt.wordpress.com/2015/01/31/difference-between-string-stringbuilder-and-stringbuffer-classes-with-example-java/)

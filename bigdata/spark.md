@@ -1,5 +1,4 @@
 # Spark
-* [Learning Spark](https://d2.naver.com/news/8818403)
 * [Spark Shuffle](https://swalloow.github.io/spark-shuffling)
 * [rdd](https://www.quora.com/Why-is-RDD-immutable-in-Spark)
   * resilient
@@ -15,6 +14,7 @@
     * take
     * top
     * reduce
+	* [aggregate](http://whereami80.tistory.com/105)
     * etc
   * lazy evaluation
 * map vs flatmap
@@ -53,7 +53,6 @@
   * groubByKey
      * [K, Iterable[V]]
   * cogroup
-
 * Joins
   * right and left outer join
   * cross join
@@ -61,6 +60,13 @@
 
 * spark 1.0 operations partitioning
   * cogroup, groupWith, join, leftOuterJoin, rightOUterJoin, groupByKey, reduceBuKey, combinByKey, lookup
+  * need lots of I/O -> Partitioner
+
+* Partitioner 
+  * [Understanding Partitioning in Spark](https://acadgild.com/blog/partitioning-in-spark)
+  * HashPartitioner
+  * RangePartitioner
+  * CustomPartitioner
 
 * Shared Variable
   * accumlators
@@ -153,14 +159,30 @@
 * Evaluation
  * precision, recall, ROC
 * Recommended Site
+  * [Learning Spark](https://d2.naver.com/news/8818403)
   * [Mastering Spark](https://jaceklaskowski.gitbooks.io/mastering-apache-spark/spark-overview.html)
   * [Introduction to AmpLab Spark Internals](https://www.youtube.com/watch?v=49Hr5xZyTEA&feature=youtu.be)
   * [Netflix - Productionizing Spark On Yarn For ETL At Petabyte Scale](https://www.slideshare.net/JenAman/netflix-productionizing-spark-on-yarn-for-etl-at-petabyte-scale)
+  * [Apache Spark에서 컬럼 기반 저장 포맷 Parquet(파케이) 제대로 활용하기](http://engineering.vcnc.co.kr/2018/05/parquet-and-spark/)
 * Recommended Book
   * Learning Spark
   * Mastering Spark
   * Advanced analytics with Spark
 * Recommended Video
   * [RDDs, DataFrames and Datasets in Apache Spark - NE Scala 2016](https://www.youtube.com/watch?v=pZQsDloGB4w)
-  * [Deep Learning and Streaming in Apache Spark](http://engineering.vcnc.co.kr/2017/12/spark-summit-eu-2017/()
+    * RDDs are type-safe, But problems is
+	  * It cannot be optimized by Spark
+	  * They're slow on non-JVM languages like python
+	  * It's too easy to build an inefficient RDD transformation chain
+	    * ex) filter is better to be placed in the front
+	* Dataframes are fatster than RDD
+	  * Because Dataframe queries are optimized
+	  * But, we've lost type safety
+	    * trait Row extends Serializable
+	* Compile-time type safety with optimizations catalyst
+	* Datasets - an extension to the dataframe API
+	  * Dataframe is just a DataSet[Row]
+	  * Inclination to Use less memory
+	    * The generated code can operate on the Tungsten compact format
+  * [Deep Learning and Streaming in Apache Spark](http://engineering.vcnc.co.kr/2017/12/spark-summit-eu-2017/)
 
