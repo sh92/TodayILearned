@@ -20,5 +20,6 @@
 * [Lucene and Solr](https://intellipaat.com/interview-question/apache-solr-interview-questions/)
 * [Network](https://career.guru99.com/top-100-networking-interview-questions-answers/)
 * [Backend](https://www.recruityourninja.com/technical-interview-questions-backend-candidates/)
+* [Data Science](https://github.com/zzsza/Datascience-Interview-Questions)
 
 * [Coding interview Univerity](https://github.com/jwasham/coding-interview-university)

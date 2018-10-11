@@ -1,5 +1,5 @@
 # Spark
-* [Spark Shuffle](https://swalloow.github.io/spark-shuffling)
+
 * [rdd](https://www.quora.com/Why-is-RDD-immutable-in-Spark)
   * resilient
     * it make sure that if one goes down it can recover.
@@ -20,9 +20,9 @@
 * map vs flatmap
   * [map vs flatmap - Korean](https://smlee729.wordpress.com/2016/06/29/spark-map-flatmap-operations/)
   * [map vs flatmap - English](https://data-flair.training/blogs/apache-spark-map-vs-flatmap/)
-* [Spark 개념 한글로 잘 정리된 사이트](http://helloino.tistory.com/20)
 * [Dataframe](http://12bme.tistory.com/307)
   * [Databricks dataframes](https://docs.databricks.com/spark/latest/dataframes-datasets/introduction-to-dataframes-python.html)
+
 * persist vs cache
   * [RDD Persistence](http://bcho.tistory.com/1029)
   * Most mllib algorithms are iterative
@@ -67,6 +67,7 @@
   * HashPartitioner
   * RangePartitioner
   * CustomPartitioner
+* [Spark Shuffle](https://swalloow.github.io/spark-shuffling)
 
 * Shared Variable
   * accumlators
@@ -116,6 +117,7 @@
   * reduceyByKey(...)
     * ShuffledRDD(...)
 
+### Spark Mllib
 * Spark mllib
  * [spark ml package](http://12bme.tistory.com/310)
    * transformer
@@ -158,17 +160,18 @@
 
 * Evaluation
  * precision, recall, ROC
-* Recommended Site
-  * [Learning Spark](https://d2.naver.com/news/8818403)
-  * [Mastering Spark](https://jaceklaskowski.gitbooks.io/mastering-apache-spark/spark-overview.html)
-  * [Introduction to AmpLab Spark Internals](https://www.youtube.com/watch?v=49Hr5xZyTEA&feature=youtu.be)
-  * [Netflix - Productionizing Spark On Yarn For ETL At Petabyte Scale](https://www.slideshare.net/JenAman/netflix-productionizing-spark-on-yarn-for-etl-at-petabyte-scale)
-  * [Apache Spark에서 컬럼 기반 저장 포맷 Parquet(파케이) 제대로 활용하기](http://engineering.vcnc.co.kr/2018/05/parquet-and-spark/)
-* Recommended Book
-  * Learning Spark
-  * Mastering Spark
-  * Advanced analytics with Spark
-* Recommended Video
+### Recommended Site
+* [Learning Spark](https://d2.naver.com/news/8818403)
+* [Mastering Spark](https://jaceklaskowski.gitbooks.io/mastering-apache-spark/spark-overview.html)
+* [Introduction to AmpLab Spark Internals](https://www.youtube.com/watch?v=49Hr5xZyTEA&feature=youtu.be)
+* [Netflix - Productionizing Spark On Yarn For ETL At Petabyte Scale](https://www.slideshare.net/JenAman/netflix-productionizing-spark-on-yarn-for-etl-at-petabyte-scale)
+* [Apache Spark에서 컬럼 기반 저장 포맷 Parquet(파케이) 제대로 활용하기](http://engineering.vcnc.co.kr/2018/05/parquet-and-spark/)
+* [Spark 개념 한글로 잘 정리된 사이트](http://helloino.tistory.com/20)
+###  Recommended Book
+* Learning Spark
+* Mastering Spark
+* Advanced analytics with Spark
+###  Recommended Video
   * [RDDs, DataFrames and Datasets in Apache Spark - NE Scala 2016](https://www.youtube.com/watch?v=pZQsDloGB4w)
     * RDDs are type-safe, But problems is
 	  * It cannot be optimized by Spark
