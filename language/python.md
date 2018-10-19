@@ -10,6 +10,9 @@
   * Memory를 효율적으로 사용
   * [yield](https://code.i-harness.com/ko/q/38957)
 
+* [Python with구문과 context manager 이해하기](https://cjh5414.github.io/python-with/)
+  * [with 구문과 컨텍스트 매니저](https://soooprmx.com/archives/4079)
+
 ## Netowrk and Concurrency
 * [GIL](https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/Python)
   * [GIL](https://medium.com/@mjhans83/python-gil-f940eac0bef9)
@@ -22,6 +25,8 @@
 * Asycio and aiohttp
   * [asyncIO란](https://tech.ssut.me/python-3-play-with-asyncio/)
     * [async python](https://mingrammer.com/translation-asynchronous-python/)
+	* [PYTHON ASYNCIO: FUTURE, TASK AND THE EVENT LOOP](http://masnun.com/2015/11/20/python-asyncio-future-task-and-the-event-loop.html)
+	* [Python의 새로운 병렬처리](https://soooprmx.com/archives/5669)
   * [Making 1 million requests with python-aiohttp](https://pawelmhm.github.io/asyncio/python/aiohttp/2016/04/22/asyncio-aiohttp.html)
   * [aiohttp를 이용해 서버를 만들어보자](http://meonggae.blogspot.com/2016/11/python-aiohttp.html)
   * [A Web Crawler With asyncio Coroutines](http://www.aosabook.org/en/500L/a-web-crawler-with-asyncio-coroutines.html)
